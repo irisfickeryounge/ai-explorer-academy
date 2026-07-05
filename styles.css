@@ -1,5 +1,5 @@
 /* ============================================================
-   AI Explorer Academy ‚Äî stijl
+   AI Explorer Academy — stijl
    Kindvriendelijk, veel wit, grote knoppen, hoog contrast,
    primair voor tablet, werkt op laptop en telefoon.
    ============================================================ */
@@ -450,7 +450,7 @@ button { font-family: inherit; cursor: pointer; }
   border: 2px solid #E9C3C3; background: #FBEBEB; color: #A23A3A; font-weight: 800;
 }
 
-/* ---------- Telefoon (¬ßB5: moet echt als telefoon-app werken) ---------- */
+/* ---------- Telefoon (§B5: moet echt als telefoon-app werken) ---------- */
 @media (max-width: 560px) {
   body { font-size: 17px; }
   .screen { padding: 16px 14px 70px; }
@@ -458,7 +458,7 @@ button { font-family: inherit; cursor: pointer; }
   .iconbtn { min-width: 44px; padding: 0 10px; font-size: 1rem; }
   .langbtn { font-weight: 800; }
 
-  /* Compacte filters: label boven, chips in √©√©n horizontaal veegbare rij. */
+  /* Compacte filters: label boven, chips in één horizontaal veegbare rij. */
   .frow { flex-direction: column; align-items: stretch; gap: 6px; padding: 8px 0; }
   .frow-label { min-width: 0; font-size: .92rem; }
   .frow-chips {

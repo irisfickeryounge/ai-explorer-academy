@@ -1,8 +1,8 @@
 /*
- * AI Explorer Academy ‚Äî app-logica (router + schermen), tweetalig NL/EN.
+ * AI Explorer Academy — app-logica (router + schermen), tweetalig NL/EN.
  *
  * Vanilla JS, geen build-stap: dubbelklik index.html en het draait.
- * Schermen (¬ß7): Home ‚Üí Bibliotheek ‚Üí Kaartdetail (7 stappen) ‚Üí Paspoort ‚Üí Begeleider.
+ * Schermen (§7): Home → Bibliotheek → Kaartdetail (7 stappen) → Paspoort → Begeleider.
  *
  * Filosofie zit in de flow verankerd: elk avontuur eindigt met een
  * reflectievraag (menselijke regie), er is geen ingebouwde chatbot, en
@@ -15,7 +15,7 @@
   const P = window.Progress;
   const app = document.getElementById('app');
 
-  // ‚îÄ‚îÄ Hulpjes ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ── Hulpjes ────────────────────────────────────────────────────
   function esc(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
@@ -42,7 +42,7 @@
 
   function tijdMin(str) { const m = String(str).match(/\d+/); return m ? parseInt(m[0], 10) : 0; }
 
-  // ‚îÄ‚îÄ Router ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ── Router ─────────────────────────────────────────────────────
   function parseHash() {
     const raw = (location.hash || '#/').replace(/^#/, '');
     const parts = raw.split('/').filter(Boolean);
@@ -66,24 +66,24 @@
   function rerender() { render(); }
   function paint(html) { app.innerHTML = html; }
 
-  // ‚îÄ‚îÄ Herbruikbare stukjes UI ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ── Herbruikbare stukjes UI ────────────────────────────────────
   function topBar(opts) {
     opts = opts || {};
     const back = opts.back
-      ? '<button class="iconbtn" data-back aria-label="' + esc(t('back')) + '">‚Äπ ' + esc(t('back')) + '</button>'
+      ? '<button class="iconbtn" data-back aria-label="' + esc(t('back')) + '">‹ ' + esc(t('back')) + '</button>'
       : '<span class="iconbtn ghost" aria-hidden="true"></span>';
-    const otherLangLabel = window.I18N.lang === 'nl' ? 'üá¨üáß EN' : 'üá≥üá± NL';
+    const otherLangLabel = window.I18N.lang === 'nl' ? '🇬🇧 EN' : '🇳🇱 NL';
     return (
       '<header class="topbar">' +
         back +
         '<a class="brand" href="#/" aria-label="' + esc(t('toHome')) + '">' +
-          '<span class="brand-rocket" aria-hidden="true">üöÄ</span>' +
+          '<span class="brand-rocket" aria-hidden="true">🚀</span>' +
           '<span class="brand-name">AI Explorer Academy</span>' +
         '</a>' +
         '<nav class="topnav" aria-label="Menu">' +
           '<button class="iconbtn langbtn" data-lang-toggle aria-label="' + esc(t('switchLang')) + '">' + otherLangLabel + '</button>' +
-          '<a class="iconbtn" href="#/paspoort" title="' + esc(t('passportShort')) + '" aria-label="' + esc(t('passportShort')) + '">üéñÔ∏è</a>' +
-          '<a class="iconbtn adult" href="#/begeleider" title="' + esc(t('guideShort')) + '" aria-label="' + esc(t('guideShort')) + '">üë©‚Äçüè´</a>' +
+          '<a class="iconbtn" href="#/paspoort" title="' + esc(t('passportShort')) + '" aria-label="' + esc(t('passportShort')) + '">🎖️</a>' +
+          '<a class="iconbtn adult" href="#/begeleider" title="' + esc(t('guideShort')) + '" aria-label="' + esc(t('guideShort')) + '">👩‍🏫</a>' +
         '</nav>' +
       '</header>'
     );
@@ -105,14 +105,14 @@
       '<a class="tile" href="#/kaart/' + c.id + '" style="--sp:' + s.kleur + ';--sp-soft:' + s.kleurZacht + '">' +
         '<div class="tile-top">' +
           '<span class="tile-sp">' + s.icoon + ' ' + esc(L(s.naam)) + '</span>' +
-          (fav ? '<span class="tile-fav" title="' + esc(t('favTitle')) + '">üîÅ‚ù§Ô∏è</span>'
-               : (done ? '<span class="tile-fav" title="' + esc(t('doneTitle')) + '">‚úÖ</span>' : '')) +
+          (fav ? '<span class="tile-fav" title="' + esc(t('favTitle')) + '">🔁❤️</span>'
+               : (done ? '<span class="tile-fav" title="' + esc(t('doneTitle')) + '">✅</span>' : '')) +
         '</div>' +
         '<h3 class="tile-title">' + esc(c.titel) + '</h3>' +
         '<div class="tile-meta">' +
           levelBadge(c.niveau) +
           '<span class="chip">' + catIcon(c.categorie) + ' ' + esc(catLabel(c.categorie)) + '</span>' +
-          '<span class="chip">‚è±Ô∏è ' + esc(c.tijdsduur) + '</span>' +
+          '<span class="chip">⏱️ ' + esc(c.tijdsduur) + '</span>' +
         '</div>' +
       '</a>'
     );
@@ -146,9 +146,9 @@
     window.speechSynthesis.speak(u);
   }
 
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
   // 7.1  HOME
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
   function renderHome() {
     const cards = allCards();
     const tiles = CFG.SUPERPOWER_VOLGORDE.map(function (name) {
@@ -192,9 +192,9 @@
     });
   }
 
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
   // 7.2  BIBLIOTHEEK
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
   function defaultFilters() {
     return { superpower: null, niveau: null, categorie: null, werkvorm: null, tijd: null };
   }
@@ -296,9 +296,9 @@
     if (clr) clr.addEventListener('click', function () { FILTERS = defaultFilters(); renderLibrary(); });
   }
 
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
-  // 7.3  KAARTDETAIL ‚Äî 7-staps avontuur
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
+  // 7.3  KAARTDETAIL — 7-staps avontuur
+  // ─────────────────────────────────────────────────────────────
   let detail = { id: null, step: 0, completedThisRun: false };
   const TOTAAL_STAPPEN = 7;
   function stapNaam(i) { return t('steps')[i]; }
@@ -316,7 +316,7 @@
       topBar({ back: true }) +
       '<section class="screen detail" style="--sp:' + s.kleur + ';--sp-soft:' + s.kleurZacht + '">' +
         '<div class="detail-head">' +
-          '<div class="detail-crumbs">' + s.icoon + ' ' + esc(L(s.naam)) + ' ¬∑ ' +
+          '<div class="detail-crumbs">' + s.icoon + ' ' + esc(L(s.naam)) + ' · ' +
             niv(c.niveau).icoon + ' ' + esc(niv(c.niveau).naam) + '</div>' +
           '<h1 class="detail-title" data-focus>' + esc(c.titel) + '</h1>' +
           '<div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="' + TOTAAL_STAPPEN +
@@ -357,7 +357,7 @@
             '<p class="big-text">' + esc(c.missie) + '</p>' +
             '<div class="mini-meta">' +
               c.werkvorm.map(function (w) { return chip(wvLabel(w), wvIcon(w)); }).join('') +
-              chip(c.tijdsduur, '‚è±Ô∏è') +
+              chip(c.tijdsduur, '⏱️') +
               c.zintuigen.map(function (z) { return chip(znLabel(z), znIcon(z)); }).join('') +
             '</div>' +
             speakBtn(c.missie) +
@@ -401,7 +401,7 @@
       case 4:
         return (
           '<div class="step step-keuze">' +
-            '<div class="step-emoji" aria-hidden="true">ü´µ</div>' +
+            '<div class="step-emoji" aria-hidden="true">🫵</div>' +
             '<h2 class="step-h">' + esc(t('nowYouDecide')) + '</h2>' +
             '<p class="big-text">' + esc(c.eigen_keuze) + '</p>' +
             '<p class="hint">' + t('noRightWrong') + '</p>' +
@@ -424,15 +424,15 @@
         const cur = P.get(c.id).rating;
         return (
           '<div class="step step-slot">' +
-            '<div class="step-emoji" aria-hidden="true">üéâ</div>' +
+            '<div class="step-emoji" aria-hidden="true">🎉</div>' +
             '<h2 class="step-h">' + esc(t('wellDone')) + '</h2>' +
             '<div class="leer-box"><strong>' + esc(t('whatLearned')) + '</strong> ' + esc(c.wat_leer_je) + '</div>' +
             '<p class="regie-line">' + t('regieLine') + '</p>' +
             '<div class="rate">' +
               '<p class="rate-q">' + esc(t('wasItFun')) + '</p>' +
               '<div class="rate-btns">' +
-                '<button class="ratebtn' + (cur === 'up' ? ' active' : '') + '" data-rate="up" aria-label="' + esc(t('thumbUp')) + '">üëç</button>' +
-                '<button class="ratebtn' + (cur === 'down' ? ' active' : '') + '" data-rate="down" aria-label="' + esc(t('thumbDown')) + '">üëé</button>' +
+                '<button class="ratebtn' + (cur === 'up' ? ' active' : '') + '" data-rate="up" aria-label="' + esc(t('thumbUp')) + '">👍</button>' +
+                '<button class="ratebtn' + (cur === 'down' ? ' active' : '') + '" data-rate="down" aria-label="' + esc(t('thumbDown')) + '">👎</button>' +
               '</div>' +
             '</div>' +
             (c.bonus ? '<div class="bonus-box"><div class="bonus-title">' + esc(t('bonusTitle')) + '</div>' +
@@ -526,9 +526,9 @@
     setTimeout(function () { holder.remove(); }, 3600);
   }
 
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
   // 7.4  EXPLORER PASPOORT
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
   function renderPassport() {
     const cards = allCards();
     let totaalGedaan = 0, totaalHerhaald = 0;
@@ -545,7 +545,7 @@
         const cnt = P.completedCount(c.id);
         const cls = cnt >= 2 ? 'stamp fav' : (cnt >= 1 ? 'stamp on' : 'stamp off');
         const label = cnt >= 2 ? t('stampFav', c.titel) : (cnt >= 1 ? t('stampDone', c.titel) : t('stampTodo', c.titel));
-        const glyph = cnt >= 2 ? 'üîÅ' : (cnt >= 1 ? niv(c.niveau).icoon : '¬∑');
+        const glyph = cnt >= 2 ? '🔁' : (cnt >= 1 ? niv(c.niveau).icoon : '·');
         return '<span class="' + cls + '" title="' + esc(label) + '" aria-label="' + esc(label) + '">' + glyph + '</span>';
       }).join('');
 
@@ -559,7 +559,7 @@
             '<div>' +
               '<h2 class="pp-name">' + esc(L(s.naam)) + (meester ? ' <span class="pp-master" title="' + esc(t('masterTitle')) + '">' + t('master') + '</span>' : '') + '</h2>' +
               '<p class="pp-sub">' + esc(t('ofAdventures', done.length, list.length)) +
-                (hoogste ? ' ¬∑ ' + esc(t('highestLevel')) + ' ' + niv(hoogste).icoon + ' ' + esc(niv(hoogste).naam) : '') + '</p>' +
+                (hoogste ? ' · ' + esc(t('highestLevel')) + ' ' + niv(hoogste).icoon + ' ' + esc(niv(hoogste).naam) : '') + '</p>' +
             '</div>' +
           '</div>' +
           '<div class="progress"><div class="progress-bar" style="width:' + pct + '%"></div></div>' +
@@ -591,9 +591,9 @@
     return t('cheer4');
   }
 
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
   // 7.5  BEGELEIDERSMODUS
-  // ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ─────────────────────────────────────────────────────────────
   function renderGuide() {
     const cards = allCards();
     const rows = CFG.SUPERPOWER_VOLGORDE.map(function (name) {
@@ -602,7 +602,7 @@
         .sort(function (a, b) { return a.niveau - b.niveau; });
       const items = list.map(function (c) {
         const g = P.get(c.id);
-        const rate = g.rating === 'up' ? 'üëç' : (g.rating === 'down' ? 'üëé' : '‚Äî');
+        const rate = g.rating === 'up' ? '👍' : (g.rating === 'down' ? '👎' : '—');
         const comps = c.competenties.map(function (k) { return chip(compLabel(k)); }).join('');
         return (
           '<details class="g-card">' +
@@ -685,12 +685,12 @@
     });
   }
 
-  // ‚îÄ‚îÄ Algemene bedrading ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
+  // ── Algemene bedrading ─────────────────────────────────────────
   function historyBack() {
     if (history.length > 1) history.back(); else navigate('#/');
   }
 
-  // E√©n gedelegeerde handler voor terug-knop √©n taalwissel, op elk scherm.
+  // Eén gedelegeerde handler voor terug-knop én taalwissel, op elk scherm.
   app.addEventListener('click', function (e) {
     if (!e.target.closest) return;
     if (e.target.closest('[data-back]')) { e.preventDefault(); historyBack(); return; }

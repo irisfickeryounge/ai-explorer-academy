@@ -1,9 +1,9 @@
 /*
- * AI Explorer Academy ‚Äî voortgang lokaal op het apparaat (¬ß9 privacy).
+ * AI Explorer Academy — voortgang lokaal op het apparaat (§9 privacy).
  *
  * GEEN accounts, GEEN kinderdata naar buiten. Alles blijft in de browser
  * (localStorage) van dit ene apparaat. Wist je de browsergegevens, dan is
- * de voortgang weg ‚Äî dat is bewust: er is geen server en geen profiel.
+ * de voortgang weg — dat is bewust: er is geen server en geen profiel.
  *
  * Datavorm:
  * {
@@ -11,9 +11,9 @@
  *     "ontdekken-01": {
  *       opened: true,          // geopend
  *       started: true,         // avontuur gestart
- *       completed: 2,          // hoe vaak afgerond  ‚Üê kernmetric "Nog een keer!"
+ *       completed: 2,          // hoe vaak afgerond  ← kernmetric "Nog een keer!"
  *       rating: "up"|"down",   // "Was dit leuk?"
- *       reflection: "‚Ä¶",       // optioneel eigen antwoord van het kind
+ *       reflection: "…",       // optioneel eigen antwoord van het kind
  *       checked: [true,false], // afgevinkte stappen
  *       guide: { ouder: "ja"|"nee", leerkracht: "ja"|"nee" } // 3 testvragen
  *     }
@@ -40,7 +40,7 @@
     try {
       localStorage.setItem(KEY, JSON.stringify(data));
     } catch (e) {
-      // Opslag vol of geblokkeerd (bijv. priv√©modus): stilletjes negeren.
+      // Opslag vol of geblokkeerd (bijv. privémodus): stilletjes negeren.
     }
   }
 
@@ -49,7 +49,7 @@
     return data.cards[id] || {};
   }
 
-  // Werk √©√©n kaart bij met een patch-object en sla op.
+  // Werk één kaart bij met een patch-object en sla op.
   function update(id, patch) {
     const data = readAll();
     const prev = data.cards[id] || {};
@@ -74,7 +74,7 @@
       if (!c.started) update(id, { started: true });
     },
 
-    // Avontuur afgerond ‚Üí verhoog de "Nog een keer!"-teller.
+    // Avontuur afgerond → verhoog de "Nog een keer!"-teller.
     markCompleted: function (id) {
       const c = card(id);
       return update(id, { completed: (c.completed || 0) + 1, started: true, opened: true });
@@ -88,7 +88,7 @@
       return (card(id).completed || 0) > 0;
     },
 
-    // Herhaal-favoriet: vaker dan √©√©n keer afgerond.
+    // Herhaal-favoriet: vaker dan één keer afgerond.
     isRepeatFavourite: function (id) {
       return (card(id).completed || 0) >= 2;
     },

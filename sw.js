@@ -1,6 +1,6 @@
 /*
- * AI Explorer Academy ‚Äî service worker.
- * Cache-first voor de app-schil: na √©√©n bezoek werkt de app volledig offline.
+ * AI Explorer Academy — service worker.
+ * Cache-first voor de app-schil: na één bezoek werkt de app volledig offline.
  * Verhoog VERSION bij elke release zodat gebruikers de nieuwe versie krijgen.
  */
 const VERSION = 'aea-v2.0.0';
