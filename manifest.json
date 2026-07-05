@@ -1,0 +1,17 @@
+{
+  "name": "AI Explorer Academy",
+  "short_name": "AI Explorer",
+  "description": "Mini AI-avonturen voor kinderen (9-12): nieuwsgierig, kritisch en zelfstandig leren omgaan met AI. De mens houdt de regie.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#FDF9F3",
+  "theme_color": "#FDF9F3",
+  "lang": "nl",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
