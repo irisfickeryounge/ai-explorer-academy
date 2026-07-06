@@ -10,7 +10,7 @@
   <meta property="og:description" content="AI-avonturen voor kinderen (9–12): nieuwsgierig, kritisch en zelfstandig leren omgaan met AI. Jij bent de baas." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://irisfickeryounge.github.io/ai-explorer-academy/site-hero.webp" />
-  <link rel="stylesheet" href="site.css?v=2" />
+  <link rel="stylesheet" href="site.css?v=3" />
   <link rel="icon" href="icon-192.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
@@ -21,7 +21,15 @@
     <img src="icon-192.png" alt="" class="s-logo">
     <span>AI Explorer Academy</span>
   </a>
+  <nav class="s-menu" id="menu">
+    <a href="index.html" class="active" data-i18n="navHome">Home</a>
+    <a href="visie.html" data-i18n="navVisie">Onze visie</a>
+    <a href="curriculum.html" data-i18n="navCurriculum">Curriculum</a>
+    <a href="onderbouwing.html" data-i18n="navOnderbouwing">Onderbouwing</a>
+    <a href="#scholen" data-i18n="navScholen">Voor scholen</a>
+  </nav>
   <nav class="s-nav">
+    <button class="s-menu-toggle" id="menuBtn" aria-label="Menu"><span></span></button>
     <button class="s-lang" id="langBtn" aria-label="Switch language">EN</button>
     <a class="s-cta small" href="app.html" data-i18n="openApp">Open de app</a>
   </nav>
@@ -46,6 +54,17 @@
     </div>
   </section>
 
+  <!-- VERTROUWENSSTRIP -->
+  <div class="s-trustbar">
+    <div class="s-trustbar-inner" id="trustbar">
+      <span class="s-trustbar-label" data-i18n="trustLabel">Gebouwd op erkende kaders:</span>
+      <a class="s-trustchip" href="onderbouwing.html" data-i18n="trust1">SLO-conceptkerndoelen digitale geletterdheid</a>
+      <a class="s-trustchip" href="onderbouwing.html" data-i18n="trust2">UNESCO AI-competentieraamwerk</a>
+      <a class="s-trustchip" href="onderbouwing.html" data-i18n="trust3">Eigen ontwikkelkader · 11 kerncompetenties</a>
+      <a class="s-trustchip" href="onderbouwing.html" data-i18n="trust4">Bekijk alle bronnen</a>
+    </div>
+  </div>
+
   <!-- USP-STRIP -->
   <section class="s-usps">
     <div class="s-usp">
@@ -59,6 +78,29 @@
     <div class="s-usp">
       <h3 data-i18n="usp3t">Ontwikkeling, geen verslaving</h3>
       <p data-i18n="usp3">Geen streaks, geen scores, geen schuldgevoel. Elk avontuur eindigt met een vraag waar het kind zélf over beslist.</p>
+    </div>
+  </section>
+
+  <!-- PEDAGOGISCHE PIJLERS -->
+  <section class="s-block">
+    <h2 data-i18n="pijlersTitle">Een programma met een ruggengraat</h2>
+    <p class="s-block-sub" data-i18n="pijlersSub">Speels aan de buitenkant, gedegen van binnen. AI Explorer Academy is gebouwd op een expliciete visie, een uitgewerkt curriculum en de actuele stand van kennis over AI-geletterdheid.</p>
+    <div class="s-pijlers">
+      <div class="s-pijler">
+        <h3 data-i18n="pijler1t">Pedagogische visie</h3>
+        <p data-i18n="pijler1">Wij optimaliseren voor ontwikkeling, niet voor schermtijd. Autonomie, kritisch denken en zelfvertrouwen staan centraal — vastgelegd in ons oprichtingsmanifest.</p>
+        <a href="visie.html" data-i18n="pijler1a">Lees onze visie →</a>
+      </div>
+      <div class="s-pijler">
+        <h3 data-i18n="pijler2t">Ontwikkelkader &amp; leerdoelen</h3>
+        <p data-i18n="pijler2">Vijf ontwikkelgebieden, elf kerncompetenties, vijf oplopende niveaus en concrete leeruitkomsten — elk avontuur is eraan gekoppeld.</p>
+        <a href="curriculum.html" data-i18n="pijler2a">Bekijk het curriculum →</a>
+      </div>
+      <div class="s-pijler">
+        <h3 data-i18n="pijler3t">Wetenschap &amp; beleid</h3>
+        <p data-i18n="pijler3">Aangesloten op de SLO-conceptkerndoelen digitale geletterdheid, het UNESCO AI-competentieraamwerk en actueel onderzoek naar kinderen &amp; AI.</p>
+        <a href="onderbouwing.html" data-i18n="pijler3a">Bekijk de onderbouwing →</a>
+      </div>
     </div>
   </section>
 
@@ -130,7 +172,7 @@
   </section>
 
   <!-- PRIJS -->
-  <section class="s-block s-pricing">
+  <section class="s-block s-pricing" id="prijzen">
     <h2 data-i18n="priceTitle">Voor ieder gezin betaalbaar</h2>
     <p class="s-block-sub" data-i18n="priceSub">AI-geletterdheid mag geen luxe zijn. Daarom blijft proberen gratis en houden we prijzen laag.</p>
     <div class="s-price-cards">
@@ -150,7 +192,7 @@
   </section>
 
   <!-- FAQ -->
-  <section class="s-block s-faq">
+  <section class="s-block s-faq" id="faq">
     <h2 data-i18n="faqTitle">Veelgestelde vragen</h2>
     <details><summary data-i18n="faq1q">Zit er een chatbot in de app?</summary><p data-i18n="faq1a">Nee, bewust niet. Kinderen chatten nooit alleen met een AI. Bij elk avontuur staat een kant-en-klare, kindveilige prompt die de volwassene kopieert naar de eigen AI-tool (zoals ChatGPT of Claude). Zo blijft er altijd een volwassene bij het gesprek.</p></details>
     <details><summary data-i18n="faq2q">Welke AI-tool heb ik nodig?</summary><p data-i18n="faq2a">Elke AI-chat werkt: de gratis versie van ChatGPT, Claude, Copilot of Gemini. Sommige "Buitenwereld"-avonturen gebruiken helemaal geen AI — die spelen zich buiten het scherm af.</p></details>
@@ -168,15 +210,44 @@
 
 </main>
 
-<footer class="s-footer">
-  <img src="icon-192.png" alt="" class="s-logo">
-  <p><strong>AI Explorer Academy</strong> — <span data-i18n="footTag">AI is het vertrekpunt, niet het eindpunt. De mens blijft de baas.</span></p>
-  <p class="s-foot-links">
-    <a href="app.html" data-i18n="openApp2">Open de app</a> ·
-    <a href="mailto:irisfickeryounge@gmail.com" data-i18n="contact">Contact</a>
-  </p>
+<footer class="s-footerxl">
+  <div class="s-footgrid">
+    <div class="s-footbrand">
+      <img src="icon-192.png" alt="">
+      <p><strong style="color:#fff">AI Explorer Academy</strong><br>
+      <span data-i18n="footTag">AI is het vertrekpunt, niet het eindpunt. De mens blijft de baas.</span></p>
+    </div>
+    <div class="s-footcol">
+      <h5 data-i18n="footProg">Programma</h5>
+      <ul>
+        <li><a href="app.html" data-i18n="openApp2">Open de app</a></li>
+        <li><a href="curriculum.html" data-i18n="navCurriculum2">Curriculum</a></li>
+        <li><a href="visie.html" data-i18n="navVisie2">Onze visie</a></li>
+        <li><a href="onderbouwing.html" data-i18n="navOnderbouwing2">Onderbouwing</a></li>
+      </ul>
+    </div>
+    <div class="s-footcol">
+      <h5 data-i18n="footWie">Voor wie</h5>
+      <ul>
+        <li><a href="#scholen" data-i18n="footScholen">Scholen</a></li>
+        <li><a href="#prijzen" data-i18n="footPrijzen">Prijzen</a></li>
+        <li><a href="#faq" data-i18n="footFaq">Veelgestelde vragen</a></li>
+      </ul>
+    </div>
+    <div class="s-footcol">
+      <h5 data-i18n="footVertrouwen">Vertrouwen</h5>
+      <ul>
+        <li><a href="privacy.html" data-i18n="footPrivacy">Privacy</a></li>
+        <li><a href="mailto:irisfickeryounge@gmail.com" data-i18n="contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="s-footbottom">
+    <span>© 2026 AI Explorer Academy</span>
+    <span data-i18n="footMade">Gemaakt in Nederland, voor nieuwsgierige kinderen overal</span>
+  </div>
 </footer>
 
-<script src="site.js?v=1"></script>
+<script src="site.js?v=3"></script>
 </body>
 </html>

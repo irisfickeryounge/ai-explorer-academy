@@ -105,7 +105,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 4px soli
 
 /* ---------- USP-strip ---------- */
 .s-usps {
-  max-width: 1120px; margin: -34px auto 0; position: relative; z-index: 2;
+  max-width: 1120px; margin: 30px auto 0; position: relative; z-index: 2;
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
   padding: 0 clamp(16px, 4vw, 40px);
 }
@@ -237,3 +237,145 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 4px soli
   body { font-size: 17px; }
   .s-cta.small span { display: none; }
 }
+
+/* ============================================================
+   v2-uitbreidingen: navigatie, subpagina's, footer XL, bronnen
+   ============================================================ */
+
+/* ---------- Hoofdnavigatie ---------- */
+.s-menu { display: flex; align-items: center; gap: 2px; margin-right: auto; margin-left: 18px; }
+.s-menu a {
+  padding: 10px 14px; border-radius: 10px; text-decoration: none;
+  color: var(--ink-soft); font-weight: 700; font-size: .98rem;
+}
+.s-menu a:hover { color: var(--blue-ink); background: #EDF2FE; }
+.s-menu a.active { color: var(--blue); background: #E4EDFD; }
+.s-menu-toggle { display: none; }
+
+@media (max-width: 900px) {
+  .s-menu {
+    position: fixed; inset: 62px 0 auto 0; z-index: 60;
+    flex-direction: column; align-items: stretch; margin: 0;
+    background: var(--surface); border-bottom: 1px solid var(--line);
+    padding: 10px 16px 16px; box-shadow: var(--shadow-lift);
+    display: none;
+  }
+  .s-menu.open { display: flex; }
+  .s-menu a { padding: 14px; font-size: 1.05rem; }
+  .s-menu-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 46px; height: 46px; border-radius: 12px;
+    border: 2px solid var(--line); background: var(--surface); cursor: pointer;
+  }
+  .s-menu-toggle span { position: relative; width: 20px; height: 2px; background: var(--blue-ink); border-radius: 2px; }
+  .s-menu-toggle span::before, .s-menu-toggle span::after {
+    content: ""; position: absolute; left: 0; width: 20px; height: 2px;
+    background: var(--blue-ink); border-radius: 2px;
+  }
+  .s-menu-toggle span::before { top: -6px; }
+  .s-menu-toggle span::after { top: 6px; }
+}
+
+/* ---------- Vertrouwensstrip ---------- */
+.s-trustbar { background: var(--surface); border-block: 1px solid var(--line); }
+.s-trustbar-inner {
+  max-width: 1120px; margin: 0 auto; padding: 18px clamp(16px, 4vw, 40px);
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 14px;
+}
+.s-trustbar-label { font-weight: 800; color: var(--ink-soft); font-size: .9rem; margin-right: 4px; }
+.s-trustchip {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #EDF2FE; color: var(--blue-ink); border: 1px solid #C9D9F8;
+  font-weight: 700; font-size: .88rem; padding: 7px 14px; border-radius: 999px;
+  text-decoration: none;
+}
+.s-trustchip:hover { border-color: var(--blue); }
+
+/* ---------- Subpagina-koppen ---------- */
+.s-pagehero {
+  background: linear-gradient(135deg, #1E63E9, #0B3EA8);
+  color: #fff; text-align: center;
+  padding: clamp(40px, 6vw, 64px) 20px;
+}
+.s-pagehero h1 { color: #fff; font-size: clamp(1.8rem, 4vw, 2.7rem); margin: 0 0 10px; }
+.s-pagehero p { color: rgba(255,255,255,.85); max-width: 660px; margin: 0 auto; }
+
+/* ---------- Langere teksten / prose ---------- */
+.s-prose { max-width: 760px; margin: 0 auto; }
+.s-prose h2 { text-align: left; font-size: 1.5rem; margin-top: 40px; }
+.s-prose h3 { font-size: 1.15rem; margin-top: 26px; }
+.s-prose p, .s-prose li { color: var(--ink-soft); }
+.s-prose strong { color: var(--ink); }
+.s-prose ul { padding-left: 22px; }
+.s-lead { font-size: 1.15rem; color: var(--ink); }
+
+.s-callout {
+  background: #EDF2FE; border-left: 6px solid var(--blue);
+  border-radius: 14px; padding: 18px 22px; margin: 24px 0;
+}
+.s-callout.geel { background: #FFF7E0; border-color: var(--yellow-deep); }
+.s-callout p { margin: 0; color: var(--ink); }
+
+/* ---------- Competentie-grid & niveau-tabel ---------- */
+.s-comps { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 24px 0; }
+.s-comp {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 14px 16px; font-weight: 700; color: var(--blue-ink); font-size: .95rem;
+}
+.s-comp small { display: block; font-weight: 500; color: var(--ink-soft); margin-top: 4px; }
+
+.s-tabel { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: .95rem; }
+.s-tabel th, .s-tabel td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.s-tabel th { color: var(--blue-ink); background: #EDF2FE; }
+.s-tabel td { color: var(--ink-soft); }
+.s-tabel-wrap { overflow-x: auto; }
+
+/* ---------- Bronnenlijst ---------- */
+.s-bronnen { display: grid; gap: 14px; margin: 24px 0; }
+.s-bron {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+  padding: 18px 20px;
+}
+.s-bron h4 { margin: 0 0 6px; font-size: 1.02rem; }
+.s-bron p { margin: 0 0 8px; color: var(--ink-soft); font-size: .93rem; }
+.s-bron a { color: var(--blue); font-weight: 700; font-size: .9rem; word-break: break-all; }
+.s-bron .s-bron-rel { color: var(--ink); font-size: .93rem; }
+.s-bron-org { display: inline-block; font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: var(--blue); margin-bottom: 6px; }
+
+/* ---------- Footer XL ---------- */
+.s-footerxl {
+  background: var(--blue-ink); color: #B9C6E4;
+  padding: clamp(40px, 6vw, 60px) clamp(16px, 4vw, 40px) 28px;
+}
+.s-footerxl a { color: #DCE5F8; text-decoration: none; }
+.s-footerxl a:hover { color: var(--yellow); }
+.s-footgrid {
+  max-width: 1120px; margin: 0 auto 34px;
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 28px;
+}
+.s-footbrand img { width: 44px; height: 44px; border-radius: 11px; margin-bottom: 12px; }
+.s-footbrand p { font-size: .92rem; margin: 0; }
+.s-footcol h5 {
+  color: #fff; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em;
+  margin: 0 0 12px;
+}
+.s-footcol ul { list-style: none; padding: 0; margin: 0; }
+.s-footcol li { margin-bottom: 9px; font-size: .95rem; }
+.s-footbottom {
+  max-width: 1120px; margin: 0 auto; padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,.15);
+  display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;
+  font-size: .85rem; color: #8FA0C9;
+}
+@media (max-width: 760px) { .s-footgrid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .s-footgrid { grid-template-columns: 1fr; } }
+
+/* ---------- Pijlers op home ---------- */
+.s-pijlers { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; }
+.s-pijler {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 24px; box-shadow: var(--shadow);
+}
+.s-pijler h3 { font-size: 1.12rem; }
+.s-pijler p { color: var(--ink-soft); font-size: .95rem; margin: 0 0 12px; }
+.s-pijler a { color: var(--blue); font-weight: 800; font-size: .92rem; text-decoration: none; }
