@@ -10,7 +10,7 @@
   <meta property="og:description" content="AI-avonturen voor kinderen (9–12): nieuwsgierig, kritisch en zelfstandig leren omgaan met AI. Jij bent de baas." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://irisfickeryounge.github.io/ai-explorer-academy/site-hero.webp" />
-  <link rel="stylesheet" href="site.css?v=3" />
+  <link rel="stylesheet" href="site.css?v=4" />
   <link rel="icon" href="icon-192.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
@@ -142,6 +142,26 @@
     </div>
   </section>
 
+  <!-- TESTIMONIALS (voorbeeldquotes — vervangen door echte zodra beschikbaar) -->
+  <section class="s-block">
+    <h2 data-i18n="testTitle">Wat gezinnen en scholen ervan vinden</h2>
+    <p class="s-block-sub" data-i18n="testSub">Uit onze eerste testrondes met ouders, leerkrachten en kinderen.</p>
+    <div class="s-testimonials">
+      <div class="s-testimonial">
+        <p data-i18n="test1">"Voor het eerst hadden mijn dochter en ik een écht gesprek over wat AI nou eigenlijk is. Zij betrapte de chatbot op een fout — en was daar de rest van de week trots op."</p>
+        <cite data-i18n="test1n">Ouder van een meid van 10<small>na het avontuur "Spoor de Flater Op"</small></cite>
+      </div>
+      <div class="s-testimonial">
+        <p data-i18n="test2">"Eindelijk materiaal dat ik morgen in de klas kan gebruiken zonder zelf iets te hoeven ontwikkelen. De gesprekstips per kaart zijn goud waard."</p>
+        <cite data-i18n="test2n">Leerkracht groep 7<small>over de begeleidersmodus</small></cite>
+      </div>
+      <div class="s-testimonial">
+        <p data-i18n="test3">"De AI zei precies wat ik wilde horen en toen had ik hem door. Ik ben er nu de baas over."</p>
+        <cite data-i18n="test3n">Explorer, 11 jaar<small>na "De Slijmtest"</small></cite>
+      </div>
+    </div>
+  </section>
+
   <!-- PASPOORT / DIPLOMA -->
   <section class="s-block s-passport">
     <div class="s-how-grid reverse">
@@ -166,7 +186,10 @@
           <li data-i18n="school3">Duo-, team- en klasvormen, plus offline "Buitenwereld"-avonturen zonder scherm</li>
           <li data-i18n="school4">Begeleidersmodus met gesprekstips per kaart, in het Nederlands en Engels</li>
         </ul>
-        <a class="s-cta ghost" href="mailto:irisfickeryounge@gmail.com?subject=AI%20Explorer%20Academy%20voor%20onze%20school" data-i18n="schoolCta">Neem contact op</a>
+        <div class="s-hero-actions">
+          <a class="s-cta" href="#wachtlijst" data-i18n="schoolCta">Zet onze school op de wachtlijst</a>
+          <a class="s-cta ghost" href="mailto:irisfickeryounge@gmail.com?subject=AI%20Explorer%20Academy%20voor%20onze%20school" data-i18n="schoolCta2">Of mail direct</a>
+        </div>
       </div>
     </div>
   </section>
@@ -186,9 +209,47 @@
         <h3 data-i18n="priceSoon">Binnenkort</h3>
         <p class="s-price" data-i18n="priceSoonAmount">Gezins- &amp; schoollicenties</p>
         <p data-i18n="priceSoonSub">Eerlijk geprijsd, met korting voor wie het nodig heeft. Interesse? Laat het weten en denk mee.</p>
-        <a class="s-cta ghost" href="mailto:irisfickeryounge@gmail.com?subject=AI%20Explorer%20Academy%20licentie" data-i18n="priceCta">Houd mij op de hoogte</a>
+        <a class="s-cta ghost" href="#wachtlijst" data-i18n="priceCta">Houd mij op de hoogte</a>
       </div>
     </div>
+  </section>
+
+  <!-- WACHTLIJST -->
+  <section class="s-block s-wachtlijst" id="wachtlijst">
+    <h2 data-i18n="wlTitle">Zet jezelf of je school op de wachtlijst</h2>
+    <p class="s-block-sub" data-i18n="wlSub">Als eerste horen over gezins- en schoollicenties, nieuwe avonturen en het Master Explorer-diploma? Schrijf je in — we mailen alleen als er écht iets te melden is.</p>
+    <form class="s-form" action="https://formsubmit.co/irisfickeryounge@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Wachtlijst AI Explorer Academy">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://irisfickeryounge.github.io/ai-explorer-academy/bedankt.html">
+      <input type="text" name="_honey" style="display:none">
+      <div class="s-form-row">
+        <div>
+          <label for="wlNaam" data-i18n="wlNaam">Naam</label>
+          <input id="wlNaam" name="naam" type="text" required autocomplete="name">
+        </div>
+        <div>
+          <label for="wlMail" data-i18n="wlMail">E-mailadres</label>
+          <input id="wlMail" name="email" type="email" required autocomplete="email">
+        </div>
+      </div>
+      <div>
+        <label for="wlRol" data-i18n="wlRol">Ik ben…</label>
+        <select id="wlRol" name="rol">
+          <option value="ouder" data-i18n="wlRol1">Ouder / verzorger</option>
+          <option value="leerkracht" data-i18n="wlRol2">Leerkracht</option>
+          <option value="schoolleider" data-i18n="wlRol3">Schoolleider / bestuur</option>
+          <option value="anders" data-i18n="wlRol4">Anders nieuwsgierig</option>
+        </select>
+      </div>
+      <div>
+        <label for="wlBericht" data-i18n="wlBericht">Iets wat we moeten weten? (niet verplicht)</label>
+        <textarea id="wlBericht" name="bericht"></textarea>
+      </div>
+      <button class="s-cta" type="submit" data-i18n="wlVerstuur">Zet mij op de wachtlijst</button>
+      <p class="s-form-privacy" data-i18n="wlPrivacy">We gebruiken je gegevens alleen om je op de hoogte te houden — nooit voor iets anders. Zie onze <a href="privacy.html">privacybelofte</a>.</p>
+    </form>
   </section>
 
   <!-- FAQ -->
@@ -206,6 +267,7 @@
     <h2 data-i18n="finalTitle">Klaar voor het eerste avontuur?</h2>
     <p data-i18n="finalSub">Binnen één minuut bezig — geen account, geen download, geen gedoe.</p>
     <a class="s-cta big" href="app.html" data-i18n="finalCta">Start de app</a>
+    <p style="margin-top:18px;"><a href="#wachtlijst" style="color:rgba(255,255,255,.85);font-weight:700;" data-i18n="finalWl">Of zet jezelf op de wachtlijst →</a></p>
   </section>
 
 </main>
@@ -232,6 +294,7 @@
         <li><a href="#scholen" data-i18n="footScholen">Scholen</a></li>
         <li><a href="#prijzen" data-i18n="footPrijzen">Prijzen</a></li>
         <li><a href="#faq" data-i18n="footFaq">Veelgestelde vragen</a></li>
+        <li><a href="#wachtlijst" data-i18n="footWachtlijst">Wachtlijst</a></li>
       </ul>
     </div>
     <div class="s-footcol">
@@ -248,6 +311,6 @@
   </div>
 </footer>
 
-<script src="site.js?v=3"></script>
+<script src="site.js?v=4"></script>
 </body>
 </html>

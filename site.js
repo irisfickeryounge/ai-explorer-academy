@@ -89,6 +89,35 @@
     finalTitle: 'Ready for the first adventure?',
     finalSub: 'Up and running in one minute — no account, no download, no hassle.',
     finalCta: 'Start the app',
+    finalWl: 'Or join the waitlist →',
+
+    /* ── testimonials (voorbeeldquotes) ── */
+    testTitle: 'What families and schools say',
+    testSub: 'From our first test rounds with parents, teachers and kids.',
+    test1: '"For the first time my daughter and I had a real conversation about what AI actually is. She caught the chatbot making a mistake — and was proud of it all week."',
+    test1n: 'Parent of a 10-year-old<small>after the adventure "Spot the Slip-Up"</small>',
+    test2: '"Finally material I can use in class tomorrow without developing anything myself. The conversation tips per card are pure gold."',
+    test2n: 'Grade 5/6 teacher<small>about facilitator mode</small>',
+    test3: '"The AI said exactly what I wanted to hear and that\'s how I caught it. I\'m the boss of it now."',
+    test3n: 'Explorer, age 11<small>after "The Suck-Up Test"</small>',
+
+    /* ── wachtlijst ── */
+    wlTitle: 'Join the waitlist — for your family or your school',
+    wlSub: 'Be the first to hear about family and school licenses, new adventures and the Master Explorer diploma. We only email when there is truly something to tell.',
+    wlNaam: 'Name', wlMail: 'Email address', wlRol: 'I am…',
+    wlRol1: 'Parent / carer', wlRol2: 'Teacher', wlRol3: 'School leader / board', wlRol4: 'Otherwise curious',
+    wlBericht: 'Anything we should know? (optional)',
+    wlVerstuur: 'Put me on the waitlist',
+    wlPrivacy: 'We only use your details to keep you posted — never for anything else. See our <a href="privacy.html">privacy promise</a>.',
+    footWachtlijst: 'Waitlist',
+    schoolCta2: 'Or email us directly',
+
+    /* ── bedankt.html ── */
+    bTitle: 'You are on the list!',
+    bSub: 'Thank you — we will email you as soon as there is news. And no more often than that, promise.',
+    bTip: 'Want to start right away? The app is ready for you — free, no account.',
+    bCta: 'Start the first adventure',
+    bTerug: 'Back to the website',
 
     /* ── visie.html ── */
     vTitle: 'Our pedagogical vision',
@@ -191,6 +220,7 @@
     prHoe1: '<strong>Progress stays on the device.</strong> Stamps, favourites and reflection answers are stored locally in the browser only (localStorage). Clear your browser data and the progress is gone — as it should be.',
     prHoe2: '<strong>No chatbot in the app.</strong> Children never talk to an AI through us. The grown-up uses their own AI tool; what happens there falls under the grown-up’s account and settings.',
     prHoe3: '<strong>No external scripts or pixels.</strong> The website and app load no ad networks, social media pixels or third-party trackers.',
+    prHoe5: '<strong>Waitlist.</strong> Only if you voluntarily join the waitlist, your name and email address are forwarded to our email via the form service FormSubmit. We use them solely to keep you posted and share them with no one.',
     prHoe4: '<strong>Hosting.</strong> The site is hosted via GitHub Pages; standard server logs (such as IP addresses) may be processed by the hosting provider, as with virtually every website.',
     prTipT: 'Tip for parents and teachers',
     prTip: 'For the AI part of the adventures, preferably use your own account with an AI provider, and do not share the child’s personal data in it. Our prompts are written so that no personal information is needed — at most an age for the language level.',

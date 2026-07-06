@@ -13,7 +13,7 @@
   const SUPERPOWERS = {
     'Ontdekken': {
       key: 'Ontdekken', slug: 'ontdekken',
-      icoon: '🔭', kleur: '#F4A62A', kleurZacht: '#FCEBCB',
+      icoon: '🔭', kleur: '#1E63E9', kleurZacht: '#E4EDFD',
       naam: { nl: 'Ontdekken', en: 'Discover' },
       kort: {
         nl: 'Stel gekke vragen en ontdek wat AI ervan maakt.',
@@ -26,7 +26,7 @@
     },
     'Samenwerken': {
       key: 'Samenwerken', slug: 'samenwerken',
-      icoon: '🤝', kleur: '#22B29F', kleurZacht: '#CFF0EB',
+      icoon: '🤝', kleur: '#1E63E9', kleurZacht: '#E4EDFD',
       naam: { nl: 'Samenwerken', en: 'Team Up' },
       kort: {
         nl: 'Maak samen met AI iets moois — jij bent de baas.',
@@ -39,7 +39,7 @@
     },
     'Controleren': {
       key: 'Controleren', slug: 'controleren',
-      icoon: '🔎', kleur: '#3D7BE0', kleurZacht: '#D4E2FA',
+      icoon: '🔎', kleur: '#1E63E9', kleurZacht: '#E4EDFD',
       naam: { nl: 'Controleren', en: 'Double-Check' },
       kort: {
         nl: 'Kijk goed: heeft de AI wel gelijk?',
@@ -52,7 +52,7 @@
     },
     'Verbeteren': {
       key: 'Verbeteren', slug: 'verbeteren',
-      icoon: '🛠️', kleur: '#8B5CF6', kleurZacht: '#E5DBFB',
+      icoon: '🛠️', kleur: '#1E63E9', kleurZacht: '#E4EDFD',
       naam: { nl: 'Verbeteren', en: 'Make It Better' },
       kort: {
         nl: 'Geef de AI tips en maak het samen beter.',
@@ -66,7 +66,7 @@
     // Herbenoemd op verzoek: 'De baas over je AI' (intern blijft de sleutel gelijk).
     'Regie Voeren': {
       key: 'Regie Voeren', slug: 'regie-voeren',
-      icoon: '🧭', kleur: '#EC5A67', kleurZacht: '#FBD6D9',
+      icoon: '🧭', kleur: '#1E63E9', kleurZacht: '#E4EDFD',
       naam: { nl: 'De baas over je AI', en: 'Boss of Your AI' },
       kort: {
         nl: 'Jij beslist wanneer AI aan of uit mag.',

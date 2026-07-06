@@ -40,14 +40,28 @@ body {
   margin: 0;
   font-family: var(--font);
   color: var(--ink);
+  /* De Explorer-wereld: diep blauw zoals de mascotte-artwork */
   background:
-    radial-gradient(1200px 500px at 85% -200px, rgba(30, 99, 233, 0.08), transparent 60%),
-    radial-gradient(900px 420px at -10% 30%, rgba(255, 201, 60, 0.07), transparent 55%),
-    var(--bg);
+    radial-gradient(1100px 600px at 80% -100px, rgba(90, 170, 255, 0.28), transparent 60%),
+    radial-gradient(800px 500px at 5% 40%, rgba(255, 201, 60, 0.10), transparent 55%),
+    linear-gradient(165deg, #1A55CB 0%, #0B3EA8 45%, #092D7E 100%);
+  background-attachment: scroll;
+  min-height: 100vh;
   font-size: 18px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  position: relative;
 }
+/* Subtiel circuit-patroon over de hele wereld */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.10) 1.5px, transparent 1.6px),
+    radial-gradient(rgba(255,255,255,0.06) 1.5px, transparent 1.6px);
+  background-size: 52px 52px, 52px 52px;
+  background-position: 0 0, 26px 26px;
+}
+#app { position: relative; z-index: 1; }
 
 /* Toegankelijk: zichtbare focus overal */
 a:focus-visible, button:focus-visible, input:focus-visible,
@@ -69,20 +83,28 @@ button { font-family: inherit; cursor: pointer; }
 img { max-width: 100%; }
 
 /* ---------- Layout ---------- */
-.screen { max-width: 1040px; margin: 0 auto; padding: 20px 20px 90px; }
+.screen { max-width: 1040px; margin: 0 auto; padding: 16px 20px 70px; }
+
+/* Tekst die direct op de blauwe wereld staat */
+.screen-title, .section-title { color: #fff; }
+.result-count, .progress-label, .detail-crumbs { color: #C6D4F4; }
+.detail-title { color: #fff; }
+.pp-cheer { color: #fff; }
+.pp-foot, .g-reset-wrap .hint { color: #B9C6E4; }
+.hero-sub strong { color: var(--yellow); }
 
 /* ---------- Topbar ---------- */
 .topbar {
   position: sticky; top: 0; z-index: 30;
   display: flex; align-items: center; gap: 12px;
   padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
+  background: rgba(9, 35, 96, 0.72);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 .brand {
   display: flex; align-items: center; gap: 8px;
-  margin: 0 auto; text-decoration: none; color: var(--blue-ink);
+  margin: 0 auto; text-decoration: none; color: #fff;
   font-weight: 900; font-size: 1.06rem;
 }
 .brand-logo { width: 30px; height: 30px; border-radius: 9px; display: block; }
@@ -93,12 +115,12 @@ img { max-width: 100%; }
   min-height: 48px; min-width: 48px;
   display: inline-flex; align-items: center; justify-content: center;
   gap: 6px; padding: 0 14px;
-  background: var(--surface); border: 2px solid var(--line);
-  border-radius: 14px; color: var(--blue-ink); font-weight: 800; font-size: 1.05rem;
-  text-decoration: none; transition: border-color .15s ease, box-shadow .15s ease;
+  background: rgba(255, 255, 255, 0.10); border: 2px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px; color: #fff; font-weight: 800; font-size: 1.05rem;
+  text-decoration: none; transition: border-color .15s ease, background .15s ease;
 }
-.iconbtn:hover { border-color: var(--blue); box-shadow: var(--glow); }
-.iconbtn svg { display: block; color: var(--blue-ink); }
+.iconbtn:hover { border-color: var(--yellow); background: rgba(255, 255, 255, 0.18); }
+.iconbtn svg { display: block; color: #fff; }
 .iconbtn.ghost { border: none; background: transparent; visibility: hidden; box-shadow: none; }
 .iconbtn:active { transform: translateY(1px); }
 .iconbtn.adult { font-size: 1.15rem; }
@@ -106,19 +128,21 @@ img { max-width: 100%; }
 @media (max-width: 560px) { .brand-name { display: none; } }
 
 /* ---------- Home / hero ---------- */
-.hero { padding: 22px 0 6px; }
+.hero { padding: 16px 0 4px; }
 .hero-inner {
   position: relative;
   display: flex; align-items: center; gap: 24px;
   background:
-    radial-gradient(600px 300px at 80% 20%, rgba(90, 170, 255, 0.35), transparent 60%),
-    radial-gradient(400px 260px at 15% 90%, rgba(255, 201, 60, 0.18), transparent 55%),
-    linear-gradient(135deg, #1E63E9 0%, #0B3EA8 100%);
+    radial-gradient(600px 300px at 80% 20%, rgba(120, 190, 255, 0.40), transparent 60%),
+    radial-gradient(400px 260px at 15% 90%, rgba(255, 201, 60, 0.22), transparent 55%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: var(--radius-lg);
-  padding: 34px 34px;
+  padding: 30px 32px;
   color: #fff;
-  box-shadow: var(--shadow-lift);
+  box-shadow: 0 18px 44px rgba(4, 16, 48, 0.4);
   overflow: hidden;
+  backdrop-filter: blur(6px);
 }
 /* subtiel circuit-patroon zoals in de artwork */
 .hero-inner::before {
@@ -144,7 +168,7 @@ img { max-width: 100%; }
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.3));
 }
 
-.section-title { text-align: center; font-size: 1.55rem; margin: 36px 0 18px; color: var(--blue-ink); }
+.section-title { text-align: center; font-size: 1.55rem; margin: 28px 0 16px; }
 
 /* ---------- Superpower-tegels ---------- */
 .power-grid {
@@ -153,15 +177,16 @@ img { max-width: 100%; }
 }
 .power-tile {
   display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px;
-  padding: 22px 20px 20px; border-radius: var(--radius-lg);
-  background: var(--surface); border: 2px solid var(--line);
-  box-shadow: var(--shadow); text-decoration: none; color: var(--ink);
+  padding: 20px 18px 18px; border-radius: var(--radius-lg);
+  background: var(--surface); border: 2px solid transparent;
+  box-shadow: 0 14px 34px rgba(4, 16, 48, 0.45);
+  text-decoration: none; color: var(--ink);
   transition: transform .14s ease, box-shadow .14s ease, border-color .14s ease;
 }
 .power-tile:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-lift);
-  border-color: var(--sp);
+  box-shadow: 0 20px 44px rgba(4, 16, 48, 0.55);
+  border-color: var(--yellow);
 }
 .power-img { width: 132px; height: 132px; border-radius: 26px; }
 .power-name { font-size: 1.4rem; font-weight: 900; color: var(--blue-ink); margin-top: 8px; }
@@ -189,15 +214,20 @@ img { max-width: 100%; }
   box-shadow: 0 6px 0 var(--yellow-deep), var(--shadow);
 }
 .bigbtn.primary:active { transform: translateY(3px); box-shadow: 0 3px 0 var(--yellow-deep); }
-.bigbtn.ghost { background: var(--surface); color: var(--blue-ink); border: 2px solid var(--line); }
-.bigbtn.ghost:hover { border-color: var(--blue); box-shadow: var(--glow); }
+.bigbtn.ghost {
+  background: rgba(255, 255, 255, 0.10); color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.30);
+}
+.bigbtn.ghost:hover { border-color: var(--yellow); background: rgba(255, 255, 255, 0.16); }
 
 .adult-strip {
-  display: block; text-align: center; margin: 26px auto 0; max-width: 660px;
+  display: block; text-align: center; margin: 24px auto 0; max-width: 660px;
   padding: 16px; border-radius: 18px; text-decoration: none;
-  background: #EDF2FE; color: var(--ink-soft); border: 1px dashed #B9CBF3;
+  background: rgba(255, 255, 255, 0.08); color: #C6D4F4;
+  border: 1px dashed rgba(255, 255, 255, 0.30);
 }
-.adult-strip strong { color: var(--blue); }
+.adult-strip:hover { background: rgba(255, 255, 255, 0.14); }
+.adult-strip strong { color: var(--yellow); }
 
 /* ---------- Bibliotheek ---------- */
 .screen-title { font-size: 1.85rem; margin: 8px 0 18px; color: var(--blue-ink); }
@@ -243,13 +273,13 @@ img { max-width: 100%; }
 }
 .tile {
   display: flex; flex-direction: column; gap: 10px;
-  padding: 18px; border-radius: var(--radius);
-  background: var(--surface); border: 2px solid var(--line);
-  border-top: 8px solid var(--sp);
-  box-shadow: var(--shadow); text-decoration: none; color: var(--ink);
+  padding: 16px; border-radius: var(--radius);
+  background: var(--surface); border: 2px solid transparent;
+  box-shadow: 0 12px 30px rgba(4, 16, 48, 0.40);
+  text-decoration: none; color: var(--ink);
   transition: transform .13s ease, box-shadow .13s ease, border-color .13s ease;
 }
-.tile:hover { transform: translateY(-4px); box-shadow: var(--shadow-lift); border-color: var(--sp); }
+.tile:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(4, 16, 48, 0.5); border-color: var(--yellow); }
 .tile-top { display: flex; justify-content: space-between; align-items: center; }
 .tile-sp {
   display: inline-flex; align-items: center; gap: 7px;
@@ -290,19 +320,20 @@ img { max-width: 100%; }
 .crumb-symbol { width: 26px; height: 26px; border-radius: 7px; }
 .detail-title { font-size: clamp(1.6rem, 4vw, 2.3rem); margin: 6px 0 14px; color: var(--blue-ink); }
 
-.progress { height: 14px; background: var(--sp-soft); border-radius: 999px; overflow: hidden; }
+.progress { height: 14px; background: rgba(255, 255, 255, 0.22); border-radius: 999px; overflow: hidden; }
+.pp-block .progress { background: var(--sp-soft); }
 .progress-bar {
   height: 100%; border-radius: 999px;
-  background: linear-gradient(90deg, var(--sp), var(--blue));
+  background: linear-gradient(90deg, var(--yellow), var(--yellow-deep));
   transition: width .3s ease;
 }
+.pp-block .progress-bar { background: linear-gradient(90deg, var(--blue), var(--blue-deep)); }
 .progress-label { margin-top: 8px; font-weight: 700; color: var(--ink-soft); }
 
 .step-card {
-  background: var(--surface); border: 2px solid var(--line);
-  border-top: 10px solid var(--sp);
-  border-radius: var(--radius-lg); padding: 30px 26px;
-  box-shadow: var(--shadow); min-height: 300px;
+  background: var(--surface); border: none;
+  border-radius: var(--radius-lg); padding: 28px 26px;
+  box-shadow: 0 18px 44px rgba(4, 16, 48, 0.45); min-height: 280px;
   display: flex; flex-direction: column; justify-content: center;
 }
 .step { animation: fade .25s ease; }
@@ -436,7 +467,10 @@ img { max-width: 100%; }
   box-shadow: 0 5px 0 var(--blue-deep), var(--shadow);
 }
 .navbtn.next:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--blue-deep); }
-.navbtn.back { background: var(--surface); color: var(--blue-ink); border: 2px solid var(--line); }
+.navbtn.back {
+  background: rgba(255, 255, 255, 0.10); color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.30);
+}
 
 /* ---------- Explorer Paspoort ---------- */
 .pp-summary { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin: 6px 0 14px; }
@@ -593,3 +627,14 @@ img { max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ============================================================
+   Op-blauw overrides (moeten NA de componentregels komen)
+   ============================================================ */
+.screen-title, .section-title, .detail-title, .pp-cheer { color: #fff; }
+.detail-crumbs { color: #D6E1FA; }
+.progress-label, .result-count { color: #D6E1FA; }
+.pp-foot, .g-reset-wrap .hint { color: #C6D4F4; }
+.pp-lbl { color: var(--ink-soft); } /* binnen witte kaart */
+.g-group-title { color: #fff; border-left-color: var(--yellow); }
+.crumb-symbol { box-shadow: 0 2px 8px rgba(4,16,48,.4); }
