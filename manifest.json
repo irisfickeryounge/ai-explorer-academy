@@ -2,7 +2,7 @@
   "name": "AI Explorer Academy",
   "short_name": "AI Explorer",
   "description": "Mini AI-avonturen voor kinderen (9-12): nieuwsgierig, kritisch en zelfstandig leren omgaan met AI. De mens houdt de regie.",
-  "start_url": "./index.html",
+  "start_url": "./app.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",

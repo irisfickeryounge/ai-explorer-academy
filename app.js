@@ -585,7 +585,7 @@
       return (
         '<div class="pp-block" style="--sp:' + s.kleur + ';--sp-soft:' + s.kleurZacht + '">' +
           '<div class="pp-head">' +
-            '<img class="pp-img" src="' + s.afbeelding + '" alt="" loading="lazy">' +
+            '<img class="pp-img" src="badge-' + s.slug + '.png" alt="" loading="lazy">' +
             '<div>' +
               '<h2 class="pp-name">' + esc(L(s.naam)) + (meester ? ' <span class="pp-master" title="' + esc(t('masterTitle')) + '">' + t('master') + '</span>' : '') + '</h2>' +
               '<p class="pp-sub">' + esc(t('ofAdventures', done.length, list.length)) +

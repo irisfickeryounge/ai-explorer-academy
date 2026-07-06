@@ -1,0 +1,239 @@
+/* ============================================================
+   AI Explorer Academy — verkoopwebsite
+   Zelfde merk als de app: Explorer-blauw + energie-geel.
+   ============================================================ */
+
+:root {
+  --blue: #1E63E9;
+  --blue-deep: #0B3EA8;
+  --blue-ink: #12285C;
+  --yellow: #FFC93C;
+  --yellow-deep: #F5A800;
+  --bg: #F6F8FD;
+  --surface: #FFFFFF;
+  --ink: #1C2440;
+  --ink-soft: #5D6784;
+  --line: #E3E8F4;
+  --radius: 24px;
+  --shadow: 0 8px 26px rgba(18, 40, 92, 0.10);
+  --shadow-lift: 0 16px 40px rgba(18, 40, 92, 0.16);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; font-family: var(--font); color: var(--ink); background: var(--bg);
+  font-size: 18px; line-height: 1.6; -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { line-height: 1.15; letter-spacing: -0.015em; color: var(--blue-ink); margin: 0 0 14px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 4px solid var(--blue-deep); outline-offset: 3px; border-radius: 8px; }
+
+/* ---------- Topbar ---------- */
+.s-topbar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px clamp(16px, 4vw, 40px);
+  background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.s-brand {
+  display: flex; align-items: center; gap: 10px; text-decoration: none;
+  color: var(--blue-ink); font-weight: 900; font-size: 1.05rem;
+}
+.s-logo { width: 34px; height: 34px; border-radius: 9px; }
+.s-nav { display: flex; align-items: center; gap: 10px; }
+.s-lang {
+  min-height: 44px; min-width: 48px; padding: 0 14px;
+  background: var(--surface); border: 2px solid var(--line); border-radius: 12px;
+  font-weight: 800; font-size: 1rem; color: var(--blue-ink); cursor: pointer;
+}
+.s-lang:hover { border-color: var(--blue); }
+
+/* ---------- CTA-knoppen ---------- */
+.s-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 52px; padding: 13px 28px; border-radius: 999px;
+  background: var(--yellow); color: var(--blue-ink);
+  font-weight: 900; font-size: 1.08rem; text-decoration: none;
+  box-shadow: 0 5px 0 var(--yellow-deep), var(--shadow);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.s-cta:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--yellow-deep); }
+.s-cta.ghost {
+  background: var(--surface); color: var(--blue-ink);
+  border: 2px solid var(--line); box-shadow: none;
+}
+.s-cta.ghost:hover { border-color: var(--blue); }
+.s-cta.small { min-height: 44px; padding: 9px 20px; font-size: .98rem; }
+.s-cta.big { font-size: 1.2rem; padding: 16px 40px; }
+
+/* ---------- Hero ---------- */
+.s-hero {
+  background:
+    radial-gradient(700px 340px at 85% 15%, rgba(90, 170, 255, 0.35), transparent 60%),
+    radial-gradient(500px 300px at 10% 95%, rgba(255, 201, 60, 0.16), transparent 55%),
+    linear-gradient(135deg, #1E63E9 0%, #0B3EA8 100%);
+  color: #fff; overflow: hidden; position: relative;
+}
+.s-hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.14) 1.5px, transparent 1.6px),
+    radial-gradient(rgba(255,255,255,0.08) 1.5px, transparent 1.6px);
+  background-size: 48px 48px, 48px 48px;
+  background-position: 0 0, 24px 24px;
+  mask-image: linear-gradient(115deg, transparent 45%, #000 100%);
+  -webkit-mask-image: linear-gradient(115deg, transparent 45%, #000 100%);
+}
+.s-hero-grid {
+  max-width: 1120px; margin: 0 auto; position: relative;
+  display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(20px, 4vw, 48px);
+  align-items: center; padding: clamp(40px, 7vw, 84px) clamp(16px, 4vw, 40px);
+}
+.s-kicker {
+  font-weight: 800; font-size: .95rem; letter-spacing: .02em;
+  color: var(--yellow); margin: 0 0 10px; text-transform: uppercase;
+}
+.s-hero-text h1 { color: #fff; font-size: clamp(2rem, 4.6vw, 3.3rem); margin-bottom: 16px; }
+.s-sub { color: rgba(255, 255, 255, 0.9); font-size: clamp(1.02rem, 1.9vw, 1.2rem); margin: 0 0 24px; max-width: 560px; }
+.s-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+.s-hero .s-cta.ghost { background: rgba(255, 255, 255, 0.12); color: #fff; border-color: rgba(255, 255, 255, 0.4); }
+.s-trust { color: rgba(255, 255, 255, 0.7); font-size: .92rem; margin: 18px 0 0; }
+.s-hero-img { border-radius: var(--radius); box-shadow: var(--shadow-lift); }
+
+/* ---------- USP-strip ---------- */
+.s-usps {
+  max-width: 1120px; margin: -34px auto 0; position: relative; z-index: 2;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  padding: 0 clamp(16px, 4vw, 40px);
+}
+.s-usp {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 22px 24px; box-shadow: var(--shadow);
+}
+.s-usp h3 { font-size: 1.08rem; margin-bottom: 8px; }
+.s-usp p { margin: 0; color: var(--ink-soft); font-size: .96rem; }
+
+/* ---------- Blokken ---------- */
+.s-block { max-width: 1120px; margin: 0 auto; padding: clamp(48px, 7vw, 84px) clamp(16px, 4vw, 40px); }
+.s-block h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); text-align: center; }
+.s-block-sub { text-align: center; color: var(--ink-soft); max-width: 640px; margin: 0 auto 34px; }
+
+/* Filosofie */
+.s-philosophy { text-align: center; }
+.s-philosophy blockquote {
+  margin: 0 auto 20px; max-width: 780px;
+  background: var(--surface); border-left: 8px solid var(--yellow);
+  border-radius: var(--radius); padding: 28px 32px; box-shadow: var(--shadow);
+}
+.s-philosophy blockquote p { font-size: clamp(1.1rem, 2.2vw, 1.35rem); font-weight: 700; color: var(--blue-ink); margin: 0 0 10px; }
+.s-philosophy cite { color: var(--ink-soft); font-style: normal; font-size: .95rem; }
+.s-philo-sub { max-width: 720px; margin: 0 auto; color: var(--ink-soft); }
+
+/* Superkrachten */
+.s-powers {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px;
+}
+.s-power {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 18px; text-align: center; box-shadow: var(--shadow);
+  transition: transform .14s ease, box-shadow .14s ease;
+}
+.s-power:hover { transform: translateY(-5px); box-shadow: var(--shadow-lift); }
+.s-power img { width: 108px; height: 108px; border-radius: 22px; margin: 0 auto 12px; }
+.s-power h4 { font-size: 1.05rem; margin-bottom: 6px; }
+.s-power p { margin: 0; font-size: .88rem; color: var(--ink-soft); }
+
+/* Hoe werkt het / secties met beeld */
+.s-how-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 56px); align-items: center;
+}
+.s-how-grid.reverse { direction: rtl; }
+.s-how-grid.reverse > * { direction: ltr; }
+.s-how-grid h2 { text-align: left; }
+.s-how-img { border-radius: var(--radius); box-shadow: var(--shadow-lift); }
+.s-steps { padding-left: 0; list-style: none; counter-reset: stap; margin: 0 0 24px; }
+.s-steps li {
+  counter-increment: stap; position: relative; padding: 0 0 18px 56px;
+}
+.s-steps li::before {
+  content: counter(stap); position: absolute; left: 0; top: 0;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--blue); color: #fff; font-weight: 900; font-size: 1.1rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.s-steps strong { color: var(--blue-ink); }
+.s-steps span { color: var(--ink-soft); }
+
+/* Scholen */
+.s-schools { background: var(--surface); border-radius: var(--radius); box-shadow: var(--shadow); max-width: 1056px; }
+.s-checks { list-style: none; padding: 0; margin: 0 0 24px; }
+.s-checks li { position: relative; padding: 0 0 14px 36px; color: var(--ink-soft); }
+.s-checks li::before {
+  content: "\2713"; position: absolute; left: 0; top: 1px;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: #E3F5EC; color: #2FA36B; font-weight: 900;
+  display: flex; align-items: center; justify-content: center; font-size: .9rem;
+}
+
+/* Prijzen */
+.s-price-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; max-width: 760px; margin: 0 auto; }
+.s-price-card {
+  background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius);
+  padding: 28px; text-align: center; box-shadow: var(--shadow);
+}
+.s-price-card.soon { border-style: dashed; }
+.s-price-card h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-soft); }
+.s-price { font-size: 2rem; font-weight: 900; color: var(--blue-ink); margin: 6px 0 12px; }
+.s-price-card p:not(.s-price) { color: var(--ink-soft); font-size: .95rem; margin-bottom: 20px; }
+
+/* FAQ */
+.s-faq { max-width: 780px; }
+.s-faq details {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px;
+  margin-bottom: 10px; padding: 0 20px;
+}
+.s-faq summary {
+  cursor: pointer; font-weight: 800; color: var(--blue-ink);
+  padding: 16px 0; list-style: none; min-height: 44px;
+}
+.s-faq summary::-webkit-details-marker { display: none; }
+.s-faq summary::after { content: "+"; float: right; font-size: 1.3rem; color: var(--blue); }
+.s-faq details[open] summary::after { content: "\2212"; }
+.s-faq p { margin: 0 0 16px; color: var(--ink-soft); }
+
+/* Slot-CTA */
+.s-final {
+  text-align: center; color: #fff;
+  background: linear-gradient(135deg, #1E63E9, #0B3EA8);
+  padding: clamp(48px, 7vw, 72px) 20px; margin-top: 20px;
+}
+.s-final h2 { color: #fff; }
+.s-final p { color: rgba(255, 255, 255, 0.85); margin: 0 0 24px; }
+
+/* Footer */
+.s-footer {
+  text-align: center; padding: 36px 20px 46px; color: var(--ink-soft); font-size: .95rem;
+}
+.s-footer .s-logo { margin: 0 auto 10px; }
+.s-foot-links a { color: var(--blue); font-weight: 700; text-decoration: none; }
+
+/* ---------- Responsief ---------- */
+@media (max-width: 860px) {
+  .s-hero-grid { grid-template-columns: 1fr; text-align: center; }
+  .s-hero-grid > *, .s-how-grid > * { min-width: 0; }
+  .s-hero-text h1 { margin-left: auto; margin-right: auto; }
+  .s-sub { margin-left: auto; margin-right: auto; }
+  .s-hero-actions { justify-content: center; }
+  .s-hero-img { width: 100%; max-width: min(100%, 520px); justify-self: center; }
+  .s-usps { grid-template-columns: 1fr; margin-top: 20px; }
+  .s-how-grid { grid-template-columns: 1fr; }
+  .s-how-grid h2 { text-align: center; }
+  .s-how-img { width: 100%; max-width: min(100%, 560px); justify-self: center; }
+}
+@media (max-width: 480px) {
+  body { font-size: 17px; }
+  .s-cta.small span { display: none; }
+}

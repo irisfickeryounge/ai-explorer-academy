@@ -4,10 +4,9 @@
  * zodra er internet is, en de app blijft volledig offline werken zonder.
  * Verhoog VERSION bij elke release.
  */
-const VERSION = 'aea-v3.0.1';
+const VERSION = 'aea-v3.1.0';
 const SHELL = [
-  './',
-  './index.html',
+  './app.html',
   './styles.css',
   './config.js',
   './i18n.js',
@@ -30,6 +29,11 @@ const SHELL = [
   './symbol-controleren.png',
   './symbol-verbeteren.png',
   './symbol-regie-voeren.png',
+  './badge-ontdekken.png',
+  './badge-samenwerken.png',
+  './badge-controleren.png',
+  './badge-verbeteren.png',
+  './badge-regie-voeren.png',
 ];
 
 self.addEventListener('install', function (e) {

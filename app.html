@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#FDF9F3" />
+  <title>AI Explorer Academy</title>
+  <meta name="description" content="Speelse AI-avonturen voor kinderen (9–12) om samen met een volwassene nieuwsgierig, kritisch en zelfstandig met AI te leren omgaan. Playful AI adventures for kids to learn to stay in charge of AI." />
+  <meta property="og:title" content="AI Explorer Academy" />
+  <meta property="og:description" content="Mini AI-avonturen voor kinderen: AI is het vertrekpunt, niet het eindpunt — de mens houdt de regie." />
+  <meta property="og:type" content="website" />
+  <link rel="stylesheet" href="styles.css?v=5" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+<body>
+  <a class="skip-link" href="#app">Naar de inhoud</a>
+  <div id="app" role="main">
+    <!-- De app wordt hier door app.js opgebouwd. -->
+    <noscript>
+      <p style="padding:2rem;font-size:1.2rem">
+        Zet JavaScript aan om AI Explorer Academy te gebruiken. /
+        Please enable JavaScript to use AI Explorer Academy.
+      </p>
+    </noscript>
+  </div>
+
+  <!-- Configuratie & taal -->
+  <script src="config.js?v=5"></script>
+  <script src="i18n.js?v=5"></script>
+  <!-- Kaartdata (data-gedreven; nieuwe kaart = object toevoegen, geen code) -->
+  <script src="cards-nl.js?v=5"></script>
+  <script src="cards-en.js?v=5"></script>
+  <!-- Voortgang lokaal op het apparaat -->
+  <script src="storage.js?v=5"></script>
+  <!-- De app zelf -->
+  <script src="app.js?v=5"></script>
+  <script>
+    // Installeerbaar + offline (PWA). Werkt alleen via https of localhost;
+    // bij openen als los bestand (file://) draait de app gewoon zonder.
+    if ('serviceWorker' in navigator &&
+        (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    }
+  </script>
+</body>
+</html>

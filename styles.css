@@ -455,7 +455,7 @@ img { max-width: 100%; }
   border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow);
 }
 .pp-head { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
-.pp-img { width: 64px; height: 64px; border-radius: 16px; flex-shrink: 0; }
+.pp-img { width: 68px; height: 68px; border-radius: 50%; flex-shrink: 0; }
 .pp-name { font-size: 1.3rem; margin: 0; color: var(--blue-ink); }
 .pp-master { font-size: .9rem; color: var(--yellow-deep); }
 .pp-sub { margin: 2px 0 0; color: var(--ink-soft); font-weight: 600; }
@@ -561,9 +561,11 @@ img { max-width: 100%; }
   .frow-label { min-width: 0; font-size: .92rem; }
   .frow-chips {
     flex-wrap: nowrap; overflow-x: auto; gap: 8px;
+    width: 100%; max-width: 100%;
     padding-bottom: 4px; -webkit-overflow-scrolling: touch;
     scrollbar-width: thin; scroll-snap-type: x proximity;
   }
+  .frow-label { max-width: 100%; }
   .frow-chips::-webkit-scrollbar { height: 5px; }
   .frow-chips::-webkit-scrollbar-thumb { background: var(--line); border-radius: 999px; }
   .fchip { flex: 0 0 auto; scroll-snap-align: start; }

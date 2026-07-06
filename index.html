@@ -3,46 +3,180 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#FDF9F3" />
-  <title>AI Explorer Academy</title>
-  <meta name="description" content="Speelse AI-avonturen voor kinderen (9–12) om samen met een volwassene nieuwsgierig, kritisch en zelfstandig met AI te leren omgaan. Playful AI adventures for kids to learn to stay in charge of AI." />
+  <meta name="theme-color" content="#0B3EA8" />
+  <title>AI Explorer Academy — AI-avonturen voor kinderen</title>
+  <meta name="description" content="54 speelse AI-avonturen voor kinderen van 9–12. Geen chatbot, geen account, geen verslaving — kinderen leren nieuwsgierig, kritisch en zelfstandig samenwerken met AI. De mens blijft de baas." />
   <meta property="og:title" content="AI Explorer Academy" />
-  <meta property="og:description" content="Mini AI-avonturen voor kinderen: AI is het vertrekpunt, niet het eindpunt — de mens houdt de regie." />
+  <meta property="og:description" content="AI-avonturen voor kinderen (9–12): nieuwsgierig, kritisch en zelfstandig leren omgaan met AI. Jij bent de baas." />
   <meta property="og:type" content="website" />
-  <link rel="stylesheet" href="styles.css?v=3" />
-  <link rel="manifest" href="manifest.json" />
+  <meta property="og:image" content="https://irisfickeryounge.github.io/ai-explorer-academy/site-hero.webp" />
+  <link rel="stylesheet" href="site.css?v=2" />
   <link rel="icon" href="icon-192.png" />
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 </head>
 <body>
-  <a class="skip-link" href="#app">Naar de inhoud</a>
-  <div id="app" role="main">
-    <!-- De app wordt hier door app.js opgebouwd. -->
-    <noscript>
-      <p style="padding:2rem;font-size:1.2rem">
-        Zet JavaScript aan om AI Explorer Academy te gebruiken. /
-        Please enable JavaScript to use AI Explorer Academy.
-      </p>
-    </noscript>
-  </div>
 
-  <!-- Configuratie & taal -->
-  <script src="config.js?v=3"></script>
-  <script src="i18n.js?v=3"></script>
-  <!-- Kaartdata (data-gedreven; nieuwe kaart = object toevoegen, geen code) -->
-  <script src="cards-nl.js?v=3"></script>
-  <script src="cards-en.js?v=3"></script>
-  <!-- Voortgang lokaal op het apparaat -->
-  <script src="storage.js?v=3"></script>
-  <!-- De app zelf -->
-  <script src="app.js?v=3"></script>
-  <script>
-    // Installeerbaar + offline (PWA). Werkt alleen via https of localhost;
-    // bij openen als los bestand (file://) draait de app gewoon zonder.
-    if ('serviceWorker' in navigator &&
-        (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
-      navigator.serviceWorker.register('sw.js').catch(function () {});
-    }
-  </script>
+<header class="s-topbar">
+  <a class="s-brand" href="#top">
+    <img src="icon-192.png" alt="" class="s-logo">
+    <span>AI Explorer Academy</span>
+  </a>
+  <nav class="s-nav">
+    <button class="s-lang" id="langBtn" aria-label="Switch language">EN</button>
+    <a class="s-cta small" href="app.html" data-i18n="openApp">Open de app</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="s-hero">
+    <div class="s-hero-grid">
+      <div class="s-hero-text">
+        <p class="s-kicker" data-i18n="kicker">Voor kinderen van 9–12 · samen met een volwassene</p>
+        <h1 data-i18n="heroTitle">Leer kinderen de baas zijn over AI</h1>
+        <p class="s-sub" data-i18n="heroSub">54 speelse avonturen waarin kinderen ontdekken wat AI kan, waar het de mist ingaat, en wanneer je beter zélf kunt denken. Geen chatbot. Geen account. Geen verslaving. Wél nieuwsgierigheid, kritisch denken en zelfvertrouwen.</p>
+        <div class="s-hero-actions">
+          <a class="s-cta" href="app.html" data-i18n="tryFree">Probeer gratis</a>
+          <a class="s-cta ghost" href="#scholen" data-i18n="forSchools">Voor scholen</a>
+        </div>
+        <p class="s-trust" data-i18n="trust">Werkt op tablet, telefoon en computer · Nederlands en Engels</p>
+      </div>
+      <img class="s-hero-img" src="site-hero.webp" alt="De vijf Explorer-mascottes op avontuur" />
+    </div>
+  </section>
+
+  <!-- USP-STRIP -->
+  <section class="s-usps">
+    <div class="s-usp">
+      <h3 data-i18n="usp1t">Geen chatbot in de app</h3>
+      <p data-i18n="usp1">Kinderen praten nooit alleen met een AI. De volwassene kopieert een kant-en-klare, kindveilige prompt naar de eigen AI-tool — en doet mee.</p>
+    </div>
+    <div class="s-usp">
+      <h3 data-i18n="usp2t">Geen account, geen kinderdata</h3>
+      <p data-i18n="usp2">Alle voortgang blijft op het eigen apparaat. Wij verzamelen niets — geen namen, geen e-mails, geen gedrag.</p>
+    </div>
+    <div class="s-usp">
+      <h3 data-i18n="usp3t">Ontwikkeling, geen verslaving</h3>
+      <p data-i18n="usp3">Geen streaks, geen scores, geen schuldgevoel. Elk avontuur eindigt met een vraag waar het kind zélf over beslist.</p>
+    </div>
+  </section>
+
+  <!-- FILOSOFIE -->
+  <section class="s-block s-philosophy">
+    <blockquote>
+      <p data-i18n="quote">"AI-output is het vertrekpunt. Niet het eindpunt. Een antwoord van AI is geen waarheid — het is een voorstel. Een kind mag vragen stellen. Twijfelen. Verbeteren. Verwerpen."</p>
+      <cite data-i18n="quoteSrc">— uit ons oprichtingsmanifest</cite>
+    </blockquote>
+    <p class="s-philo-sub" data-i18n="philoSub">Kinderen groeien op in een wereld vol AI. De vraag is niet óf ze ermee werken, maar of ze zichzelf niet verliezen terwijl ze het leren. Daarom trainen wij geen prompt-trucjes, maar menselijke vaardigheden: nieuwsgierig onderzoeken, kritisch beoordelen, zelfstandig kiezen.</p>
+  </section>
+
+  <!-- DE 5 SUPERKRACHTEN -->
+  <section class="s-block">
+    <h2 data-i18n="powersTitle">Vijf superkrachten, vijf gidsen</h2>
+    <p class="s-block-sub" data-i18n="powersSub">Elk avontuur traint één van de vijf AI-superkrachten — met een eigen mascotte als gids.</p>
+    <div class="s-powers">
+      <div class="s-power"><img src="mascot-ontdekken.png" alt="Vonk de Vraagvos"><h4 data-i18n="p1t">Ontdekken</h4><p data-i18n="p1">Gekke vragen stellen en kijken wat AI ervan maakt — met Vonk de Vraagvos.</p></div>
+      <div class="s-power"><img src="mascot-samenwerken.png" alt="Zoem de Samenbij"><h4 data-i18n="p2t">Samenwerken</h4><p data-i18n="p2">Samen iets maken waarbij het kind de baas blijft — met Zoem de Samenbij.</p></div>
+      <div class="s-power"><img src="mascot-controleren.png" alt="Loep de Speuruil"><h4 data-i18n="p3t">Controleren</h4><p data-i18n="p3">Feiten checken, fouten vangen, bronnen najagen — met Loep de Speuruil.</p></div>
+      <div class="s-power"><img src="mascot-verbeteren.png" alt="Bikkel de Bouwbever"><h4 data-i18n="p4t">Verbeteren</h4><p data-i18n="p4">Feedback geven tot het góéd is — met Bikkel de Bouwbever.</p></div>
+      <div class="s-power"><img src="mascot-regie-voeren.png" alt="Kompas de Kapitein-Pinguïn"><h4 data-i18n="p5t">De baas over je AI</h4><p data-i18n="p5">Zelf beslissen wanneer AI aan of uit gaat — met Kompas de Kapitein-Pinguïn.</p></div>
+    </div>
+  </section>
+
+  <!-- HOE WERKT HET -->
+  <section class="s-block s-how">
+    <div class="s-how-grid">
+      <img class="s-how-img" src="site-ouder-kind.webp" alt="Ouder en kind doen samen een avontuur op de tablet" />
+      <div>
+        <h2 data-i18n="howTitle">Zo werkt een avontuur</h2>
+        <ol class="s-steps">
+          <li><strong data-i18n="how1t">Kies een avontuur.</strong> <span data-i18n="how1">Filter op superkracht, niveau, tijd of "met wie". Van 15 minuten tot een flinke missie.</span></li>
+          <li><strong data-i18n="how2t">Doe en denk samen.</strong> <span data-i18n="how2">Het kind doorloopt de stappen; op het juiste moment plakt de volwassene onze kindveilige prompt in ChatGPT, Claude of een andere AI.</span></li>
+          <li><strong data-i18n="how3t">Het kind beslist.</strong> <span data-i18n="how3">Elk avontuur eindigt met een eigen keuze en een reflectievraag — nooit met "de AI had gelijk".</span></li>
+        </ol>
+        <a class="s-cta" href="app.html" data-i18n="tryNow">Start een avontuur</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PASPOORT / DIPLOMA -->
+  <section class="s-block s-passport">
+    <div class="s-how-grid reverse">
+      <div>
+        <h2 data-i18n="ppTitle">Stempels, geen scores</h2>
+        <p data-i18n="pp1">In het Explorer Paspoort verzamelen kinderen stempels per superkracht. We vieren herhalen en ontdekken — niet snelheid, niet ranglijsten.</p>
+        <p data-i18n="pp2">Wie alle avonturen van een superkracht voltooit, wordt Meester. En wie ze allemaal haalt? Master Explorer.</p>
+      </div>
+      <img class="s-how-img" src="art-viering.webp" alt="De mascottes vieren feest" />
+    </div>
+  </section>
+
+  <!-- VOOR SCHOLEN -->
+  <section class="s-block s-schools" id="scholen">
+    <div class="s-how-grid">
+      <img class="s-how-img" src="site-klas.webp" alt="Klas werkt met AI Explorer Academy" />
+      <div>
+        <h2 data-i18n="schoolTitle">Voor de klas: morgen inzetbaar</h2>
+        <ul class="s-checks">
+          <li data-i18n="school1">54 kant-en-klare lesactiviteiten (15–30 min), gekoppeld aan 11 kerncompetenties voor AI-geletterdheid</li>
+          <li data-i18n="school2">Geen accounts of leerlinggegevens — AVG-proof zonder gedoe</li>
+          <li data-i18n="school3">Duo-, team- en klasvormen, plus offline "Buitenwereld"-avonturen zonder scherm</li>
+          <li data-i18n="school4">Begeleidersmodus met gesprekstips per kaart, in het Nederlands en Engels</li>
+        </ul>
+        <a class="s-cta ghost" href="mailto:irisfickeryounge@gmail.com?subject=AI%20Explorer%20Academy%20voor%20onze%20school" data-i18n="schoolCta">Neem contact op</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIJS -->
+  <section class="s-block s-pricing">
+    <h2 data-i18n="priceTitle">Voor ieder gezin betaalbaar</h2>
+    <p class="s-block-sub" data-i18n="priceSub">AI-geletterdheid mag geen luxe zijn. Daarom blijft proberen gratis en houden we prijzen laag.</p>
+    <div class="s-price-cards">
+      <div class="s-price-card">
+        <h3 data-i18n="priceFree">Nu</h3>
+        <p class="s-price">€0</p>
+        <p data-i18n="priceFreeSub">Alle 54 avonturen gratis te gebruiken tijdens de startperiode. Geen account nodig — begin meteen.</p>
+        <a class="s-cta" href="app.html" data-i18n="tryFree2">Probeer gratis</a>
+      </div>
+      <div class="s-price-card soon">
+        <h3 data-i18n="priceSoon">Binnenkort</h3>
+        <p class="s-price" data-i18n="priceSoonAmount">Gezins- &amp; schoollicenties</p>
+        <p data-i18n="priceSoonSub">Eerlijk geprijsd, met korting voor wie het nodig heeft. Interesse? Laat het weten en denk mee.</p>
+        <a class="s-cta ghost" href="mailto:irisfickeryounge@gmail.com?subject=AI%20Explorer%20Academy%20licentie" data-i18n="priceCta">Houd mij op de hoogte</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="s-block s-faq">
+    <h2 data-i18n="faqTitle">Veelgestelde vragen</h2>
+    <details><summary data-i18n="faq1q">Zit er een chatbot in de app?</summary><p data-i18n="faq1a">Nee, bewust niet. Kinderen chatten nooit alleen met een AI. Bij elk avontuur staat een kant-en-klare, kindveilige prompt die de volwassene kopieert naar de eigen AI-tool (zoals ChatGPT of Claude). Zo blijft er altijd een volwassene bij het gesprek.</p></details>
+    <details><summary data-i18n="faq2q">Welke AI-tool heb ik nodig?</summary><p data-i18n="faq2a">Elke AI-chat werkt: de gratis versie van ChatGPT, Claude, Copilot of Gemini. Sommige "Buitenwereld"-avonturen gebruiken helemaal geen AI — die spelen zich buiten het scherm af.</p></details>
+    <details><summary data-i18n="faq3q">Hoe zit het met privacy?</summary><p data-i18n="faq3a">Er zijn geen accounts en wij verzamelen geen gegevens. De voortgang (stempels, favorieten) wordt alleen op het eigen apparaat bewaard. Wat er in de AI-tool gebeurt, blijft binnen het account van de volwassene.</p></details>
+    <details><summary data-i18n="faq4q">Voor welke leeftijd is dit?</summary><p data-i18n="faq4a">Gemaakt voor de bovenbouw van de basisschool (9–12 jaar). Jongere kinderen kunnen prima meedoen met extra hulp; slimme twaalfplussers vinden in niveau 4 en 5 genoeg uitdaging — van slijmende AI's betrappen tot je eigen chatbot-regels kraken.</p></details>
+    <details><summary data-i18n="faq5q">Werkt het ook op de telefoon?</summary><p data-i18n="faq5a">Ja — de app werkt op tablet, telefoon en computer, en is te installeren via "Zet op beginscherm". Daarna werkt hij zelfs offline.</p></details>
+  </section>
+
+  <!-- SLOT-CTA -->
+  <section class="s-final">
+    <h2 data-i18n="finalTitle">Klaar voor het eerste avontuur?</h2>
+    <p data-i18n="finalSub">Binnen één minuut bezig — geen account, geen download, geen gedoe.</p>
+    <a class="s-cta big" href="app.html" data-i18n="finalCta">Start de app</a>
+  </section>
+
+</main>
+
+<footer class="s-footer">
+  <img src="icon-192.png" alt="" class="s-logo">
+  <p><strong>AI Explorer Academy</strong> — <span data-i18n="footTag">AI is het vertrekpunt, niet het eindpunt. De mens blijft de baas.</span></p>
+  <p class="s-foot-links">
+    <a href="app.html" data-i18n="openApp2">Open de app</a> ·
+    <a href="mailto:irisfickeryounge@gmail.com" data-i18n="contact">Contact</a>
+  </p>
+</footer>
+
+<script src="site.js?v=1"></script>
 </body>
 </html>
