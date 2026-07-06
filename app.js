@@ -72,18 +72,18 @@
     const back = opts.back
       ? '<button class="iconbtn" data-back aria-label="' + esc(t('back')) + '">‹ ' + esc(t('back')) + '</button>'
       : '<span class="iconbtn ghost" aria-hidden="true"></span>';
-    const otherLangLabel = window.I18N.lang === 'nl' ? '🇬🇧 EN' : '🇳🇱 NL';
+    const otherLangLabel = window.I18N.lang === 'nl' ? 'EN' : 'NL';
     return (
       '<header class="topbar">' +
         back +
         '<a class="brand" href="#/" aria-label="' + esc(t('toHome')) + '">' +
-          '<span class="brand-rocket" aria-hidden="true">🚀</span>' +
+          '<img class="brand-logo" src="icon-192.png" alt="">' +
           '<span class="brand-name">AI Explorer Academy</span>' +
         '</a>' +
         '<nav class="topnav" aria-label="Menu">' +
           '<button class="iconbtn langbtn" data-lang-toggle aria-label="' + esc(t('switchLang')) + '">' + otherLangLabel + '</button>' +
-          '<a class="iconbtn" href="#/paspoort" title="' + esc(t('passportShort')) + '" aria-label="' + esc(t('passportShort')) + '">🎖️</a>' +
-          '<a class="iconbtn adult" href="#/begeleider" title="' + esc(t('guideShort')) + '" aria-label="' + esc(t('guideShort')) + '">👩‍🏫</a>' +
+          '<a class="iconbtn" href="#/paspoort" title="' + esc(t('passportShort')) + '" aria-label="' + esc(t('passportShort')) + '"><svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M12 2l2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 15.4l-5.3 2.7 1-5.8-4.2-4.1 5.9-.9z"/></svg></a>' +
+          '<a class="iconbtn adult" href="#/begeleider" title="' + esc(t('guideShort')) + '" aria-label="' + esc(t('guideShort')) + '"><svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor" aria-hidden="true"><path d="M12 12a4.5 4.5 0 100-9 4.5 4.5 0 000 9zm0 2.2c-4.6 0-8.5 2.3-8.5 5.2V21h17v-1.6c0-2.9-3.9-5.2-8.5-5.2z"/></svg></a>' +
         '</nav>' +
       '</header>'
     );
@@ -91,7 +91,7 @@
 
   function levelBadge(n) {
     const l = niv(n);
-    return '<span class="lvl-badge" title="' + esc(l.naam) + '">' + l.icoon + ' ' + esc(l.naam) + '</span>';
+    return '<span class="lvl-badge" title="' + esc(l.naam) + '">' + l.nummer + ' \u00b7 ' + esc(l.naam) + '</span>';
   }
   function chip(text, icon) {
     return '<span class="chip">' + (icon ? icon + ' ' : '') + esc(text) + '</span>';
@@ -104,15 +104,16 @@
     return (
       '<a class="tile" href="#/kaart/' + c.id + '" style="--sp:' + s.kleur + ';--sp-soft:' + s.kleurZacht + '">' +
         '<div class="tile-top">' +
-          '<span class="tile-sp">' + s.icoon + ' ' + esc(L(s.naam)) + '</span>' +
-          (fav ? '<span class="tile-fav" title="' + esc(t('favTitle')) + '">🔁❤️</span>'
-               : (done ? '<span class="tile-fav" title="' + esc(t('doneTitle')) + '">✅</span>' : '')) +
+          '<span class="tile-sp"><img class="tile-symbol" src="' + s.symbool + '" alt="">' + esc(L(s.naam)) + '</span>' +
+          (fav ? '<span class="tile-fav fav-badge" title="' + esc(t('favTitle')) + '">\u21bb</span>'
+               : (done ? '<span class="tile-fav done-badge" title="' + esc(t('doneTitle')) + '">\u2713</span>' : '')) +
         '</div>' +
         '<h3 class="tile-title">' + esc(c.titel) + '</h3>' +
         '<div class="tile-meta">' +
           levelBadge(c.niveau) +
-          '<span class="chip">' + catIcon(c.categorie) + ' ' + esc(catLabel(c.categorie)) + '</span>' +
-          '<span class="chip">⏱️ ' + esc(c.tijdsduur) + '</span>' +
+          c.werkvorm.map(function (w) { return chip(wvLabel(w)); }).join('') +
+          '<span class="chip">' + esc(catLabel(c.categorie)) + '</span>' +
+          '<span class="chip">' + esc(c.tijdsduur) + '</span>' +
         '</div>' +
       '</a>'
     );
@@ -157,10 +158,10 @@
       return (
         '<a class="power-tile" href="#/bibliotheek" data-sp="' + esc(name) + '" ' +
           'style="--sp:' + s.kleur + ';--sp-soft:' + s.kleurZacht + '">' +
-          '<span class="power-icon" aria-hidden="true">' + s.icoon + '</span>' +
+          '<img class="power-img" src="' + s.afbeelding + '" alt="" loading="lazy">' +
           '<span class="power-name">' + esc(L(s.naam)) + '</span>' +
           '<span class="power-desc">' + esc(L(s.kort)) + '</span>' +
-          '<span class="power-mascot">' + s.mascotteIcoon + ' ' + esc(L(s.mascotte)) + '</span>' +
+          '<span class="power-mascot">' + esc(L(s.mascotte)) + '</span>' +
           '<span class="power-count">' + t('adventuresCount', total) + '</span>' +
         '</a>'
       );
@@ -170,9 +171,14 @@
       topBar({ back: false }) +
       '<section class="screen home">' +
         '<div class="hero">' +
-          '<h1 class="hero-title" data-focus>' + esc(t('heroTitlePre')) +
-            '<span class="rainbow">' + esc(t('heroTitleHi')) + '</span>' + esc(t('heroTitlePost')) + '</h1>' +
-          '<p class="hero-sub">' + t('heroSub') + '</p>' +
+          '<div class="hero-inner">' +
+            '<div class="hero-text">' +
+              '<h1 class="hero-title" data-focus>' + esc(t('heroTitlePre')) +
+                '<span class="hero-hi">' + esc(t('heroTitleHi')) + '</span>' + esc(t('heroTitlePost')) + '</h1>' +
+              '<p class="hero-sub">' + t('heroSub') + '</p>' +
+            '</div>' +
+            '<img class="hero-mascot" src="mascot-ontdekken.png" alt="" aria-hidden="true">' +
+          '</div>' +
         '</div>' +
         '<h2 class="section-title">' + esc(t('chooseSuperpower')) + '</h2>' +
         '<div class="power-grid">' + tiles + '</div>' +
@@ -212,12 +218,26 @@
     return true;
   }
 
+  // Hoeveel resultaten levert waarde V voor facet F op, gegeven de andere filters?
+  // Zo kunnen we lege combinaties dimmen i.p.v. de gebruiker op "0 avonturen" te laten stuiten.
+  function countWith(facet, value) {
+    const backup = FILTERS[facet];
+    FILTERS[facet] = value;
+    const n = allCards().filter(matchesFilters).length;
+    FILTERS[facet] = backup;
+    return n;
+  }
+
   function filterRow(label, facet, options) {
     const chips = options.map(function (opt) {
       const active = FILTERS[facet] === opt.value;
-      return '<button class="fchip' + (active ? ' active' : '') + '" ' +
+      const n = countWith(facet, opt.value);
+      const zero = n === 0 && !active;
+      return '<button class="fchip' + (active ? ' active' : '') + (zero ? ' zero' : '') + '" ' +
         'data-facet="' + facet + '" data-value="' + esc(String(opt.value)) + '" ' +
-        'aria-pressed="' + active + '">' + opt.label + '</button>';
+        (zero ? 'disabled aria-disabled="true" ' : '') +
+        'aria-pressed="' + active + '">' + opt.label +
+        '<span class="fcount">' + n + '</span></button>';
     }).join('');
     const allActive = FILTERS[facet] == null;
     return (
@@ -234,16 +254,16 @@
 
   function renderLibrary() {
     const spOpts = CFG.SUPERPOWER_VOLGORDE.map(function (n) {
-      return { value: n, label: sp(n).icoon + ' ' + esc(L(sp(n).naam)) };
+      return { value: n, label: '<img class="fchip-sym" src="' + sp(n).symbool + '" alt="">' + esc(L(sp(n).naam)) };
     });
     const nivOpts = [1, 2, 3, 4, 5].map(function (n) {
-      return { value: n, label: niv(n).icoon + ' ' + esc(niv(n).naam) };
+      return { value: n, label: n + ' \u00b7 ' + esc(niv(n).naam) };
     });
     const catOpts = Object.keys(CFG.CATEGORIEEN).map(function (k) {
-      return { value: k, label: catIcon(k) + ' ' + esc(catLabel(k)) };
+      return { value: k, label: esc(catLabel(k)) };
     });
     const wvOpts = Object.keys(CFG.WERKVORMEN).map(function (k) {
-      return { value: k, label: wvIcon(k) + ' ' + esc(wvLabel(k)) };
+      return { value: k, label: esc(wvLabel(k)) };
     });
     const tijdOpts = CFG.TIJD_BUCKETS.map(function (b, i) {
       return { value: i, label: esc(L(b.label)) };
@@ -299,8 +319,10 @@
   // ─────────────────────────────────────────────────────────────
   // 7.3  KAARTDETAIL — 7-staps avontuur
   // ─────────────────────────────────────────────────────────────
+  // 6-staps flow: de AI-prompt zit ín "Aan de slag!" op de plek waar je hem
+  // nodig hebt (veld prompt_na_stap) — geen heen-en-weer geklik meer.
   let detail = { id: null, step: 0, completedThisRun: false };
-  const TOTAAL_STAPPEN = 7;
+  const TOTAAL_STAPPEN = 6;
   function stapNaam(i) { return t('steps')[i]; }
 
   function renderCardDetail(id) {
@@ -316,8 +338,9 @@
       topBar({ back: true }) +
       '<section class="screen detail" style="--sp:' + s.kleur + ';--sp-soft:' + s.kleurZacht + '">' +
         '<div class="detail-head">' +
-          '<div class="detail-crumbs">' + s.icoon + ' ' + esc(L(s.naam)) + ' · ' +
-            niv(c.niveau).icoon + ' ' + esc(niv(c.niveau).naam) + '</div>' +
+          '<div class="detail-crumbs">' +
+            '<img class="crumb-symbol" src="' + s.symbool + '" alt="">' + esc(L(s.naam)) + ' · ' +
+            esc(niv(c.niveau).naam) + '</div>' +
           '<h1 class="detail-title" data-focus>' + esc(c.titel) + '</h1>' +
           '<div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="' + TOTAAL_STAPPEN +
             '" aria-valuenow="' + (detail.step + 1) + '" aria-label="' + esc(t('stepAria', detail.step + 1, TOTAAL_STAPPEN)) + '">' +
@@ -343,7 +366,7 @@
         const s0 = sp(c.superpower);
         return (
           '<div class="step step-uitdaging">' +
-            '<div class="step-emoji mascot-emoji" aria-hidden="true">' + s0.mascotteIcoon + '</div>' +
+            '<img class="mascot-img" src="' + s0.afbeelding + '" alt="" aria-hidden="true">' +
             '<div class="mascot-name">' + esc(L(s0.mascotte)) + '</div>' +
             '<p class="big-text">' + esc(c.uitdaging) + '</p>' +
             speakBtn(c.uitdaging) +
@@ -356,18 +379,39 @@
             '<h2 class="step-h">' + esc(t('yourMission')) + '</h2>' +
             '<p class="big-text">' + esc(c.missie) + '</p>' +
             '<div class="mini-meta">' +
-              c.werkvorm.map(function (w) { return chip(wvLabel(w), wvIcon(w)); }).join('') +
-              chip(c.tijdsduur, '⏱️') +
-              c.zintuigen.map(function (z) { return chip(znLabel(z), znIcon(z)); }).join('') +
+              c.werkvorm.map(function (w) { return chip(wvLabel(w)); }).join('') +
+              chip(c.tijdsduur) +
+              c.zintuigen.map(function (z) { return chip(znLabel(z)); }).join('') +
             '</div>' +
             speakBtn(c.missie) +
           '</div>'
         );
       case 2: {
+        // "Aan de slag!" — checklist mét de AI-prompt op de juiste plek in de flow.
         const saved = (P.get(c.id).checked) || [];
-        const items = c.stappen.map(function (st, i) {
+        // Na welke stap hoort de prompt? (0 = ervoor; fallback: na de laatste stap)
+        const na = (typeof c.prompt_na_stap === 'number')
+          ? Math.max(0, Math.min(c.prompt_na_stap, c.stappen.length))
+          : c.stappen.length;
+        const promptBlock = (
+          '<li class="do-ai">' +
+            '<div class="ai-block">' +
+              '<div class="ai-block-head">' + esc(t('promptNow')) + '</div>' +
+              '<p class="ai-block-uitleg">' + esc(c.samenwerken_met_ai) + '</p>' +
+              '<div class="prompt-box">' +
+                '<div class="prompt-label">' + esc(t('promptToCopy')) + '</div>' +
+                '<p class="prompt-text">' + esc(c.ai_prompt) + '</p>' +
+                '<button class="copybtn" data-copy>' + esc(t('copyPrompt')) + '</button>' +
+              '</div>' +
+              '<p class="tool-note">' + t('toolNote', esc(c.ai_tools)) + '</p>' +
+            '</div>' +
+          '</li>'
+        );
+        let items = '';
+        if (na === 0) items += promptBlock;
+        c.stappen.forEach(function (st, i) {
           const on = !!saved[i];
-          return (
+          items += (
             '<li class="do-step">' +
               '<label class="do-check">' +
                 '<input type="checkbox" data-stepidx="' + i + '"' + (on ? ' checked' : '') + '>' +
@@ -376,7 +420,8 @@
               '</label>' +
             '</li>'
           );
-        }).join('');
+          if (i + 1 === na) items += promptBlock;
+        });
         return (
           '<div class="step">' +
             '<h2 class="step-h">' + esc(t('whatToDo')) + '</h2>' +
@@ -387,28 +432,14 @@
       }
       case 3:
         return (
-          '<div class="step">' +
-            '<h2 class="step-h">' + esc(t('workWithAI')) + '</h2>' +
-            '<p class="mid-text">' + esc(c.samenwerken_met_ai) + '</p>' +
-            '<div class="prompt-box">' +
-              '<div class="prompt-label">' + esc(t('promptToCopy')) + '</div>' +
-              '<p class="prompt-text">' + esc(c.ai_prompt) + '</p>' +
-              '<button class="copybtn" data-copy>' + esc(t('copyPrompt')) + '</button>' +
-            '</div>' +
-            '<p class="tool-note">' + t('toolNote', esc(c.ai_tools)) + '</p>' +
-          '</div>'
-        );
-      case 4:
-        return (
           '<div class="step step-keuze">' +
-            '<div class="step-emoji" aria-hidden="true">🫵</div>' +
-            '<h2 class="step-h">' + esc(t('nowYouDecide')) + '</h2>' +
+                        '<h2 class="step-h">' + esc(t('nowYouDecide')) + '</h2>' +
             '<p class="big-text">' + esc(c.eigen_keuze) + '</p>' +
             '<p class="hint">' + t('noRightWrong') + '</p>' +
             speakBtn(c.eigen_keuze) +
           '</div>'
         );
-      case 5: {
+      case 4: {
         const saved = P.get(c.id).reflection || '';
         return (
           '<div class="step">' +
@@ -420,19 +451,18 @@
           '</div>'
         );
       }
-      case 6: {
+      case 5: {
         const cur = P.get(c.id).rating;
         return (
           '<div class="step step-slot">' +
-            '<div class="step-emoji" aria-hidden="true">🎉</div>' +
-            '<h2 class="step-h">' + esc(t('wellDone')) + '</h2>' +
+                        '<h2 class="step-h">' + esc(t('wellDone')) + '</h2>' +
             '<div class="leer-box"><strong>' + esc(t('whatLearned')) + '</strong> ' + esc(c.wat_leer_je) + '</div>' +
             '<p class="regie-line">' + t('regieLine') + '</p>' +
             '<div class="rate">' +
               '<p class="rate-q">' + esc(t('wasItFun')) + '</p>' +
               '<div class="rate-btns">' +
-                '<button class="ratebtn' + (cur === 'up' ? ' active' : '') + '" data-rate="up" aria-label="' + esc(t('thumbUp')) + '">👍</button>' +
-                '<button class="ratebtn' + (cur === 'down' ? ' active' : '') + '" data-rate="down" aria-label="' + esc(t('thumbDown')) + '">👎</button>' +
+                '<button class="ratebtn' + (cur === 'up' ? ' active' : '') + '" data-rate="up" aria-label="' + esc(t('thumbUp')) + '"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M2.5 20h3.2V9.5H2.5V20zm19-9.4c0-.9-.8-1.7-1.7-1.7h-5.4l.8-4 .1-.3c0-.4-.2-.7-.4-1L13.6 2 7.9 7.7c-.3.3-.5.8-.5 1.2v9.4c0 .9.8 1.7 1.7 1.7h7.6c.7 0 1.3-.4 1.6-1l2.5-6c.1-.2.2-.4.2-.7v-1.7z"/></svg></button>' +
+                '<button class="ratebtn' + (cur === 'down' ? ' active' : '') + '" data-rate="down" aria-label="' + esc(t('thumbDown')) + '" style="transform:rotate(180deg)"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M2.5 20h3.2V9.5H2.5V20zm19-9.4c0-.9-.8-1.7-1.7-1.7h-5.4l.8-4 .1-.3c0-.4-.2-.7-.4-1L13.6 2 7.9 7.7c-.3.3-.5.8-.5 1.2v9.4c0 .9.8 1.7 1.7 1.7h7.6c.7 0 1.3-.4 1.6-1l2.5-6c.1-.2.2-.4.2-.7v-1.7z"/></svg></button>' +
               '</div>' +
             '</div>' +
             (c.bonus ? '<div class="bonus-box"><div class="bonus-title">' + esc(t('bonusTitle')) + '</div>' +
@@ -545,7 +575,7 @@
         const cnt = P.completedCount(c.id);
         const cls = cnt >= 2 ? 'stamp fav' : (cnt >= 1 ? 'stamp on' : 'stamp off');
         const label = cnt >= 2 ? t('stampFav', c.titel) : (cnt >= 1 ? t('stampDone', c.titel) : t('stampTodo', c.titel));
-        const glyph = cnt >= 2 ? '🔁' : (cnt >= 1 ? niv(c.niveau).icoon : '·');
+        const glyph = cnt >= 2 ? '\u21bb' : (cnt >= 1 ? '\u2713' : '\u00b7');
         return '<span class="' + cls + '" title="' + esc(label) + '" aria-label="' + esc(label) + '">' + glyph + '</span>';
       }).join('');
 
@@ -555,11 +585,11 @@
       return (
         '<div class="pp-block" style="--sp:' + s.kleur + ';--sp-soft:' + s.kleurZacht + '">' +
           '<div class="pp-head">' +
-            '<span class="pp-icon" aria-hidden="true">' + s.icoon + '</span>' +
+            '<img class="pp-img" src="' + s.afbeelding + '" alt="" loading="lazy">' +
             '<div>' +
               '<h2 class="pp-name">' + esc(L(s.naam)) + (meester ? ' <span class="pp-master" title="' + esc(t('masterTitle')) + '">' + t('master') + '</span>' : '') + '</h2>' +
               '<p class="pp-sub">' + esc(t('ofAdventures', done.length, list.length)) +
-                (hoogste ? ' · ' + esc(t('highestLevel')) + ' ' + niv(hoogste).icoon + ' ' + esc(niv(hoogste).naam) : '') + '</p>' +
+                (hoogste ? ' · ' + esc(t('highestLevel')) + ' ' + esc(niv(hoogste).naam) : '') + '</p>' +
             '</div>' +
           '</div>' +
           '<div class="progress"><div class="progress-bar" style="width:' + pct + '%"></div></div>' +
@@ -602,12 +632,12 @@
         .sort(function (a, b) { return a.niveau - b.niveau; });
       const items = list.map(function (c) {
         const g = P.get(c.id);
-        const rate = g.rating === 'up' ? '👍' : (g.rating === 'down' ? '👎' : '—');
+        const rate = g.rating === 'up' ? '\u2713' : (g.rating === 'down' ? '\u2715' : '\u2014');
         const comps = c.competenties.map(function (k) { return chip(compLabel(k)); }).join('');
         return (
           '<details class="g-card">' +
             '<summary>' +
-              '<span class="g-lvl">' + niv(c.niveau).icoon + '</span>' +
+              '<span class="g-lvl">' + niv(c.niveau).nummer + '</span>' +
               '<span class="g-title">' + esc(c.titel) + '</span>' +
               '<span class="g-rate" title="' + esc(t('childRateTitle')) + '">' + rate + '</span>' +
             '</summary>' +
@@ -630,7 +660,7 @@
       }).join('');
       return (
         '<div class="g-group" style="--sp:' + s.kleur + ';--sp-soft:' + s.kleurZacht + '">' +
-          '<h2 class="g-group-title">' + s.icoon + ' ' + esc(L(s.naam)) + '</h2>' + items +
+          '<h2 class="g-group-title"><img class="g-group-sym" src="' + s.symbool + '" alt="">' + esc(L(s.naam)) + '</h2>' + items +
         '</div>'
       );
     }).join('');

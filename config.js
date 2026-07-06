@@ -21,6 +21,8 @@
       },
       mascotte: { nl: 'Vonk de Vraagvos', en: 'Spark the Question Fox' },
       mascotteIcoon: '🦊',
+      afbeelding: 'mascot-ontdekken.png',
+      symbool: 'symbol-ontdekken.png',
     },
     'Samenwerken': {
       key: 'Samenwerken', slug: 'samenwerken',
@@ -32,6 +34,8 @@
       },
       mascotte: { nl: 'Zoem de Samenbij', en: 'Buzz the Team Bee' },
       mascotteIcoon: '🐝',
+      afbeelding: 'mascot-samenwerken.png',
+      symbool: 'symbol-samenwerken.png',
     },
     'Controleren': {
       key: 'Controleren', slug: 'controleren',
@@ -43,6 +47,8 @@
       },
       mascotte: { nl: 'Loep de Speuruil', en: 'Lens the Detective Owl' },
       mascotteIcoon: '🦉',
+      afbeelding: 'mascot-controleren.png',
+      symbool: 'symbol-controleren.png',
     },
     'Verbeteren': {
       key: 'Verbeteren', slug: 'verbeteren',
@@ -54,6 +60,8 @@
       },
       mascotte: { nl: 'Bikkel de Bouwbever', en: 'Chip the Builder Beaver' },
       mascotteIcoon: '🦫',
+      afbeelding: 'mascot-verbeteren.png',
+      symbool: 'symbol-verbeteren.png',
     },
     // Herbenoemd op verzoek: 'De baas over je AI' (intern blijft de sleutel gelijk).
     'Regie Voeren': {
@@ -66,6 +74,8 @@
       },
       mascotte: { nl: 'Kompas de Kapitein-Pinguïn', en: 'Compass the Captain Penguin' },
       mascotteIcoon: '🐧',
+      afbeelding: 'mascot-regie-voeren.png',
+      symbool: 'symbol-regie-voeren.png',
     },
   };
 
@@ -134,9 +144,9 @@
   };
 
   const TIJD_BUCKETS = [
-    { label: { nl: 'Kort (< 15 min)', en: 'Short (< 15 min)' }, test: (min) => min < 15 },
-    { label: { nl: 'Middel (15–20 min)', en: 'Medium (15–20 min)' }, test: (min) => min >= 15 && min <= 20 },
-    { label: { nl: 'Lang (> 20 min)', en: 'Long (> 20 min)' }, test: (min) => min > 20 },
+    { label: { nl: 'Kort (±15 min)', en: 'Short (±15 min)' }, test: (min) => min <= 15 },
+    { label: { nl: 'Middel (±20 min)', en: 'Medium (±20 min)' }, test: (min) => min > 15 && min <= 22 },
+    { label: { nl: 'Lang (25+ min)', en: 'Long (25+ min)' }, test: (min) => min > 22 },
   ];
 
   window.CONFIG = {

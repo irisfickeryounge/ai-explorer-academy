@@ -1,9 +1,10 @@
 /*
  * AI Explorer Academy — service worker.
- * Cache-first voor de app-schil: na één bezoek werkt de app volledig offline.
- * Verhoog VERSION bij elke release zodat gebruikers de nieuwe versie krijgen.
+ * Network-first met cache-vangnet: gebruikers zien altijd de nieuwste content
+ * zodra er internet is, en de app blijft volledig offline werken zonder.
+ * Verhoog VERSION bij elke release.
  */
-const VERSION = 'aea-v2.0.0';
+const VERSION = 'aea-v3.0.1';
 const SHELL = [
   './',
   './index.html',
@@ -19,6 +20,16 @@ const SHELL = [
   './icon-512.png',
   './icon-512-maskable.png',
   './apple-touch-icon.png',
+  './mascot-ontdekken.png',
+  './mascot-samenwerken.png',
+  './mascot-controleren.png',
+  './mascot-verbeteren.png',
+  './mascot-regie-voeren.png',
+  './symbol-ontdekken.png',
+  './symbol-samenwerken.png',
+  './symbol-controleren.png',
+  './symbol-verbeteren.png',
+  './symbol-regie-voeren.png',
 ];
 
 self.addEventListener('install', function (e) {
@@ -41,16 +52,16 @@ self.addEventListener('activate', function (e) {
 self.addEventListener('fetch', function (e) {
   if (e.request.method !== 'GET') return;
   e.respondWith(
-    caches.match(e.request, { ignoreSearch: true }).then(function (hit) {
-      if (hit) return hit;
-      return fetch(e.request).then(function (res) {
-        // Cache same-origin responses voor offline gebruik.
-        if (res.ok && new URL(e.request.url).origin === location.origin) {
-          const copy = res.clone();
-          caches.open(VERSION).then(function (c) { c.put(e.request, copy); });
-        }
-        return res;
-      });
+    fetch(e.request).then(function (res) {
+      // Vers van het net: meteen ook de cache bijwerken voor offline gebruik.
+      if (res.ok && new URL(e.request.url).origin === location.origin) {
+        const copy = res.clone();
+        caches.open(VERSION).then(function (c) { c.put(e.request, copy); });
+      }
+      return res;
+    }).catch(function () {
+      // Offline: val terug op de cache.
+      return caches.match(e.request, { ignoreSearch: true });
     })
   );
 });

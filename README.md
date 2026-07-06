@@ -16,13 +16,14 @@ in charge.*
 
 ## Wat zit erin? / What's inside
 
-- **29 Explorer Cards** in het Nederlands én Engels (taalknop 🇳🇱/🇬🇧 rechtsboven), waarvan
-  6 offline "Buitenwereld"-avonturen.
-- **5 AI-superkrachten** met eigen mascotte: 🦊 Ontdekken, 🐝 Samenwerken, 🦉 Controleren,
-  🦫 Verbeteren, 🐧 De baas over je AI (Boss of Your AI).
-- **7-staps avonturenflow** per kaart: Uitdaging → Missie → Stappen → Samenwerken met AI
-  (met kopieerbare, kindveilige AI-prompt) → Eigen keuze → Reflectie → Afsluiting met
-  **bonus-uitdaging** voor herhaling.
+- **54 Explorer Cards** in het Nederlands én Engels (taalknop 🇳🇱/🇬🇧 rechtsboven), waarvan
+  10 offline "Buitenwereld"-avonturen.
+- **5 AI-superkrachten** met eigen mascotte-artwork: 🦊 Vonk (Ontdekken), 🐝 Zoem
+  (Samenwerken), 🦉 Loep (Controleren), 🦫 Bikkel (Verbeteren), 🐧 Kompas (De baas over
+  je AI / Boss of Your AI).
+- **6-staps avonturenflow** per kaart: Uitdaging → Missie → Aan de slag! (checklist mét de
+  kopieerbare, kindveilige AI-prompt op de juiste plek in de flow) → Jij beslist →
+  Reflectie → Afsluiting met **bonus-uitdaging** voor herhaling.
 - **Explorer Paspoort**: stempels, voortgang, "Nog een keer!"-teller.
 - **Begeleidersmodus**: filosofie, gesprekstips en de 3 testvragen per kaart.
 - **PWA**: installeerbaar op tablet/telefoon, werkt offline na eerste bezoek.
