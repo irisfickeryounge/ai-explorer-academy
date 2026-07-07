@@ -351,7 +351,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 4px soli
 .s-footerxl a:hover { color: var(--yellow); }
 .s-footgrid {
   max-width: 1120px; margin: 0 auto 34px;
-  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 28px;
+  display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1.1fr; gap: 28px;
 }
 .s-footbrand img { width: 44px; height: 44px; border-radius: 11px; margin-bottom: 12px; }
 .s-footbrand p { font-size: .92rem; margin: 0; }
@@ -462,3 +462,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 4px soli
 .s-omslag p { color: rgba(255,255,255,.9); max-width: 720px; margin: 0 auto 22px; }
 .s-omslag strong { color: #fff; }
 .s-omslag .s-cta.ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.4); }
+
+/* ---------- FAQ-groepskopjes ---------- */
+.s-faq-groep {
+  margin: 30px 0 12px; font-size: .92rem; color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: .05em; font-weight: 800; text-align: left;
+}
