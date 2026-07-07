@@ -246,6 +246,7 @@
     oW3: 'Young children attribute human traits to AI (MIT Media Lab), and 72% of teens have already used AI companions (Common Sense Media, 2025). Teaching children to look critically before their teens gives them a head start in resilience.',
     oW4t: 'Guided, never left alone',
     oW4: 'UNESCO recommends age limits and guidance for young users of generative AI. With us, children never chat unsupervised: a grown-up is always involved, within a structured assignment and a kid-safe prompt.',
+    oMeta: 'We maintain our own literature review covering 65+ studies and institutional reports (UNICEF, UNESCO, OECD, APA) on AI and the developing child. Its central thread: <strong>the question is not whether children use AI to learn, but which interaction design during learning is wise.</strong> Frictionless answer machines harm learning; guided, structured assignments strengthen it. Every one of our 54 adventures is designed on exactly that principle.',
     oNlT: 'The Netherlands: policy & the education field',
     oIntT: 'International frameworks',
     oWetT: 'Research: children & AI',
