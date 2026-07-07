@@ -1,5 +1,5 @@
 /*
- * AI Explorer Academy — website: taalwissel (NL/EN) + mobiel menu.
+ * The Neuronauts — website: taalwissel (NL/EN) + mobiel menu.
  * Deelt de taalkeuze met de app via dezelfde localStorage-sleutel.
  * NL staat in de HTML; EN-vertalingen staan hieronder per data-i18n-sleutel.
  */
@@ -49,7 +49,7 @@
     zCta1: 'Start today — free',
     zCta2: 'See the science behind it',
     pijlersTitle: 'A programme with a backbone',
-    pijlersSub: 'Playful on the outside, rigorous on the inside. AI Explorer Academy is built on an explicit vision, a structured curriculum and the current state of knowledge on AI literacy.',
+    pijlersSub: 'Playful on the outside, rigorous on the inside. The Neuronauts is built on an explicit vision, a structured curriculum and the current state of knowledge on AI literacy.',
     pijler1t: 'Pedagogical vision',
     pijler1: 'We optimise for development, not for screen time. Autonomy, critical thinking and confidence come first — laid down in our founding manifesto.',
     pijler1a: 'Read our vision →',
@@ -75,8 +75,8 @@
     how3t: 'The child decides.', how3: 'Every adventure ends with an own choice and a reflection question — never with "the AI was right".',
     tryNow: 'Start an adventure',
     ppTitle: 'Stamps, not scores',
-    pp1: 'In the Explorer Passport kids collect stamps per superpower. We celebrate repeating and discovering — not speed, not leaderboards.',
-    pp2: 'Complete every adventure of a superpower and you become a Master. Complete them all? Master Explorer.',
+    pp1: 'In the Neuronaut logbook kids collect stamps per superpower. We celebrate repeating and discovering — not speed, not leaderboards.',
+    pp2: 'Complete every adventure of a superpower and you become a Master. Complete them all? Master Neuronaut.',
     schoolTitle: 'For the classroom: ready tomorrow',
     school1: '54 ready-to-use activities (15–30 min), mapped to 11 core competencies for AI literacy',
     school2: 'No accounts or student data — privacy-proof without paperwork',
@@ -143,7 +143,7 @@
 
     /* ── wachtlijst ── */
     wlTitle: 'Join the waitlist — for your family or your school',
-    wlSub: 'Be the first to hear about family and school licenses, new adventures and the Master Explorer diploma. We only email when there is truly something to tell.',
+    wlSub: 'Be the first to hear about family and school licenses, new adventures and the Master Neuronaut diploma. We only email when there is truly something to tell.',
     wlNaam: 'Name', wlMail: 'Email address', wlRol: 'I am…',
     wlRol1: 'Parent / carer', wlRol2: 'Teacher', wlRol3: 'School leader / board', wlRol4: 'Otherwise curious',
     wlBericht: 'Anything we should know? (optional)',
@@ -161,7 +161,7 @@
 
     /* ── visie.html ── */
     vTitle: 'Our pedagogical vision',
-    vSub: 'Why AI Explorer Academy exists — and why we deliberately do not build an addictive learning app.',
+    vSub: 'Why The Neuronauts exists — and why we deliberately do not build an addictive learning app.',
     v1: 'Children are growing up in a world where AI will be everywhere: at school, at home, in their future work, in media and friendships. The question is not whether children will grow up with AI. The question is: <strong>how do we make sure they keep developing and trusting their own brain — and learn to use AI as an ally instead of leaning on it?</strong>',
     v2: 'Much of today’s AI education focuses on buttons and tricks: how to use ChatGPT, how to write a prompt. Useful, but not enough. We believe children need more than technical skills. <strong>They need human skills.</strong>',
     vMissieT: 'Our mission',
@@ -193,7 +193,7 @@
     /* ── curriculum.html ── */
     cTitle: 'Curriculum & learning goals',
     cSub: 'Not loose games, but a structured development framework: five development areas, eleven core competencies and five ascending levels.',
-    c1: 'AI Explorer Academy is built on its own <strong>AI Literacy Development Framework</strong> for children aged 8–12. It describes the knowledge, skills and attitudes children need to deal with AI consciously, critically and independently. The focus is explicitly on <em>using, understanding and judging</em> AI in daily life — not on programming.',
+    c1: 'The Neuronauts is built on its own <strong>AI Literacy Development Framework</strong> for children aged 8–12. It describes the knowledge, skills and attitudes children need to deal with AI consciously, critically and independently. The focus is explicitly on <em>using, understanding and judging</em> AI in daily life — not on programming.',
     cPedT: 'Pedagogical principles',
     cPed1: 'Active learning<small>Children learn by investigating, trying and reflecting.</small>',
     cPed2: 'Experience-based<small>New insights come from concrete experiences.</small>',
@@ -235,7 +235,7 @@
     oTitle: 'Scientific evidence',
     oSub: 'How our programme aligns with the new Dutch core objectives, international frameworks and current research on children & AI — with 20 verified sources.',
     o1: 'In the Netherlands, AI literacy is no longer optional. In 2025 SLO delivered the <strong>final draft core objectives for digital literacy</strong>, including an explicit AI objective for primary education: <em>"The pupil explores AI"</em> (objective 22D). Legal enactment is expected on 1 August 2027 — and the Ministry of Education, SLO and the primary school council are urging schools to start <strong>now</strong>.',
-    o2: '<strong>We are not waiting.</strong> AI Explorer Academy makes that assignment concrete today: 54 fully developed adventures in which children aged 9–12 explore AI, judge it critically and learn to use it responsibly — exactly what objective 22D asks.',
+    o2: '<strong>We are not waiting.</strong> The Neuronauts makes that assignment concrete today: 54 fully developed adventures in which children aged 9–12 explore AI, judge it critically and learn to use it responsibly — exactly what objective 22D asks.',
     oNote: 'Note: the sources below are described in Dutch; most link to English-language documents.',
     oWatT: 'What the research tells us',
     oW1t: 'Without guardrails, children learn less',
@@ -255,7 +255,7 @@
     /* ── privacy.html ── */
     prTitle: 'Our privacy promise',
     prSub: 'The shortest privacy statement you have ever read — because we simply collect nothing.',
-    pr1: '<strong>AI Explorer Academy collects no personal data.</strong> No accounts, no names, no email addresses, no behavioural data, no ad tracking, no analytics cookies. Nothing.',
+    pr1: '<strong>The Neuronauts collects no personal data.</strong> No accounts, no names, no email addresses, no behavioural data, no ad tracking, no analytics cookies. Nothing.',
     prHoeT: 'How is that possible?',
     prHoe1: '<strong>Progress stays on the device.</strong> Stamps, favourites and reflection answers are stored locally in the browser only (localStorage). Clear your browser data and the progress is gone — as it should be.',
     prHoe2: '<strong>No chatbot in the app.</strong> Children never talk to an AI through us. The grown-up uses their own AI tool; what happens there falls under the grown-up’s account and settings.',

@@ -1,10 +1,10 @@
 /*
- * AI Explorer Academy — service worker.
+ * The Neuronauts — service worker.
  * Network-first met cache-vangnet: gebruikers zien altijd de nieuwste content
  * zodra er internet is, en de app blijft volledig offline werken zonder.
  * Verhoog VERSION bij elke release.
  */
-const VERSION = 'aea-v3.1.0';
+const VERSION = 'nn-v1.0.0';
 const SHELL = [
   './app.html',
   './styles.css',

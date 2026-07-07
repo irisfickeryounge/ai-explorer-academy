@@ -1,5 +1,5 @@
 /*
- * AI Explorer Academy — app-logica (router + schermen), tweetalig NL/EN.
+ * The Neuronauts — app-logica (router + schermen), tweetalig NL/EN.
  *
  * Vanilla JS, geen build-stap: dubbelklik index.html en het draait.
  * Schermen (§7): Home → Bibliotheek → Kaartdetail (7 stappen) → Paspoort → Begeleider.
@@ -78,7 +78,7 @@
         back +
         '<a class="brand" href="#/" aria-label="' + esc(t('toHome')) + '">' +
           '<img class="brand-logo" src="icon-192.png" alt="">' +
-          '<span class="brand-name">AI Explorer Academy</span>' +
+          '<span class="brand-name">The Neuronauts</span>' +
         '</a>' +
         '<nav class="topnav" aria-label="Menu">' +
           '<button class="iconbtn langbtn" data-lang-toggle aria-label="' + esc(t('switchLang')) + '">' + otherLangLabel + '</button>' +

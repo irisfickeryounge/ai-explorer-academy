@@ -1,5 +1,5 @@
 /*
- * AI Explorer Academy — configuratie & domeinmodel (§5 van de PRD)
+ * The Neuronauts — configuratie & domeinmodel (§5 van de PRD)
  * Tweetalig (NL/EN): interne sleutels blijven gelijk, alleen weergavetekst
  * wordt vertaald. Kaartdata gebruikt de interne sleutels (bijv. superpower
  * "Regie Voeren"), zodat filters en voortgang taal-onafhankelijk werken.
@@ -89,7 +89,7 @@
     2: { nummer: 2, naam: 'Inventor', icoon: '💡', uitleg: { nl: 'Samen creëren', en: 'Creating together' } },
     3: { nummer: 3, naam: 'Navigator', icoon: '🗺️', uitleg: { nl: 'Analyseren en verbeteren', en: 'Analysing and improving' } },
     4: { nummer: 4, naam: 'Captain', icoon: '⚓', uitleg: { nl: 'Zelfstandig sturen', en: 'Steering on your own' } },
-    5: { nummer: 5, naam: 'Master Explorer', icoon: '👑', uitleg: { nl: 'Zelf beslissen wanneer AI wel of niet nodig is', en: 'Deciding yourself when AI is or is not needed' } },
+    5: { nummer: 5, naam: 'Master Neuronaut', icoon: '👑', uitleg: { nl: 'Zelf beslissen wanneer AI wel of niet nodig is', en: 'Deciding yourself when AI is or is not needed' } },
   };
 
   // Contentcategorieën (§5.3) — sleutel blijft NL, label vertaald.

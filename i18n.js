@@ -1,5 +1,5 @@
 /*
- * AI Explorer Academy — meertaligheid (NL/EN).
+ * The Neuronauts — meertaligheid (NL/EN).
  *
  * - window.I18N.lang  : huidige taal ('nl' | 'en')
  * - window.I18N.set() : taal wisselen (onthouden in localStorage)
@@ -28,13 +28,13 @@
     // Topbar / algemeen
     back: { nl: 'Terug', en: 'Back' },
     toHome: { nl: 'Naar startscherm', en: 'To home screen' },
-    passportShort: { nl: 'Explorer Paspoort', en: 'Explorer Passport' },
+    passportShort: { nl: 'Logboek', en: 'Logbook' },
     guideShort: { nl: 'Begeleidersmodus', en: 'Grown-up mode' },
     switchLang: { nl: 'Switch to English', en: 'Wissel naar Nederlands' },
 
     // Home
-    heroTitlePre: { nl: 'Word een ', en: 'Become an ' },
-    heroTitleHi: { nl: 'AI Explorer', en: 'AI Explorer' },
+    heroTitlePre: { nl: 'Word ', en: 'Become a ' },
+    heroTitleHi: { nl: 'Neuronaut', en: 'Neuronaut' },
     heroTitlePost: { nl: '!', en: '!' },
     heroSub: {
       nl: 'Ga op avontuur met AI. Jij stelt de vragen, jij maakt de keuzes — de AI helpt alleen mee. <strong>Jij bent de baas.</strong>',
@@ -43,7 +43,7 @@
     chooseSuperpower: { nl: 'Kies je superkracht', en: 'Choose your superpower' },
     adventuresCount: { nl: function (n) { return n + ' avonturen'; }, en: function (n) { return n + ' adventures'; } },
     seeAll: { nl: 'Bekijk alle avonturen', en: 'See all adventures' },
-    myPassport: { nl: 'Mijn Explorer Paspoort', en: 'My Explorer Passport' },
+    myPassport: { nl: 'Mijn logboek', en: 'My logbook' },
     adultStrip: {
       nl: '<strong>Voor ouders &amp; leerkrachten</strong> — tips en hoe je meedoet',
       en: '<strong>For parents &amp; teachers</strong> — tips and how to join in',
@@ -98,7 +98,7 @@
     reflectLabel: { nl: 'Schrijf of teken je antwoord (mag ook gewoon in je hoofd!):', en: 'Write or draw your answer (or just think it!):'},
     reflectPlaceholder: { nl: 'Typ hier je gedachten…', en: 'Type your thoughts here…' },
     reflectHint: { nl: 'Dit blijft alleen op dit apparaat. Niemand anders leest het.', en: 'This stays on this device only. No one else reads it.' },
-    wellDone: { nl: 'Goed gedaan, Explorer!', en: 'Well done, Explorer!' },
+    wellDone: { nl: 'Goed gedaan, Neuronaut!', en: 'Well done, Neuronaut!' },
     whatLearned: { nl: 'Wat je leerde:', en: 'What you learned:'},
     regieLine: { nl: 'Onthoud: de AI hielp mee, maar <strong>jij</strong> was de baas.', en: 'Remember: the AI helped, but <strong>you</strong> were the boss.' },
     wasItFun: { nl: 'Was dit leuk?', en: 'Did you like it?' },
@@ -107,13 +107,13 @@
     onceMore: { nl: 'Nog een keer!', en: 'Once more!' },
     bonusTitle: { nl: 'Bonus', en: 'Bonus' },
     moreAdventures: { nl: 'Naar meer avonturen', en: 'More adventures' },
-    myPassportShort: { nl: 'Mijn paspoort', en: 'My passport' },
+    myPassportShort: { nl: 'Mijn logboek', en: 'My logbook' },
     prev: { nl: '‹ Vorige', en: '‹ Previous' },
     next: { nl: 'Volgende ›', en: 'Next ›' },
     imDone: { nl: 'Ik ben klaar! ✓', en: "I'm done! ✓" },
 
     // Paspoort
-    passportTitle: { nl: 'Mijn Explorer Paspoort', en: 'My Explorer Passport' },
+    passportTitle: { nl: 'Mijn Neuronauten-logboek', en: 'My Neuronaut logbook' },
     discovered: { nl: 'avonturen ontdekt', en: 'adventures discovered' },
     onceMoreTimes: { nl: 'keer "Nog een keer!"', en: 'times "Once more!"'},
     ofAdventures: {
@@ -131,16 +131,16 @@
       en: 'It is not about fast or many — it is about <strong>discovering and repeating</strong>. Every stamp is an adventure you did.',
     },
     cheer0: { nl: 'Je paspoort is nog leeg — kies een avontuur en verdien je eerste stempel! ', en: 'Your passport is still empty — pick an adventure and earn your first stamp! ' },
-    cheer1: { nl: 'Goed bezig, Explorer! Je bent net begonnen met ontdekken. ', en: 'Nice going, Explorer! You have just begun discovering. ' },
+    cheer1: { nl: 'Goed bezig, Neuronaut! Je bent net begonnen met ontdekken. ', en: 'Nice going, Neuronaut! You have just begun discovering. ' },
     cheer2: { nl: 'Wauw, je bent echt aan het ontdekken! Blijf nieuwsgierig.', en: 'Wow, you are really discovering! Stay curious.' },
-    cheer3: { nl: 'Knap hoor! Je wordt een echte Master Explorer. ', en: 'Impressive! You are becoming a true Master Explorer. ' },
-    cheer4: { nl: 'Alle avonturen ontdekt! Jij bent een echte AI Explorer Master! ', en: 'All adventures discovered! You are a true AI Explorer Master! ' },
+    cheer3: { nl: 'Knap hoor! Je wordt een echte Master Neuronaut. ', en: 'Impressive! You are becoming a true Master Neuronaut. ' },
+    cheer4: { nl: 'Alle avonturen ontdekt! Jij bent een echte Master Neuronaut! ', en: 'All adventures discovered! You are a true Master Neuronaut! ' },
 
     // Begeleidersmodus
     guideTitle: { nl: 'Voor begeleiders', en: 'For grown-ups' },
     guideHow: {
-      nl: '<strong>Hoe werkt dit?</strong> AI Explorer Academy is bedoeld om <em>samen</em> te doen — over de schouder meekijken, niet het kind alleen achter een scherm. Er zit bewust <strong>geen chatbot</strong> in de app. Bij de stap "Samenwerken met AI" kopieert u een kant-en-klare prompt en plakt die in uw eigen AI-tool (ChatGPT, Claude, …).',
-      en: '<strong>How does this work?</strong> AI Explorer Academy is meant to be done <em>together</em> — looking over the shoulder, not a child alone behind a screen. There is deliberately <strong>no chatbot</strong> in the app. At the "Working with AI" step you copy a ready-made prompt and paste it into your own AI tool (ChatGPT, Claude, …).',
+      nl: '<strong>Hoe werkt dit?</strong> The Neuronauts is bedoeld om <em>samen</em> te doen — over de schouder meekijken, niet het kind alleen achter een scherm. Er zit bewust <strong>geen chatbot</strong> in de app. Bij de stap "Samenwerken met AI" kopieert u een kant-en-klare prompt en plakt die in uw eigen AI-tool (ChatGPT, Claude, …).',
+      en: '<strong>How does this work?</strong> The Neuronauts is meant to be done <em>together</em> — looking over the shoulder, not a child alone behind a screen. There is deliberately <strong>no chatbot</strong> in the app. At the "Working with AI" step you copy a ready-made prompt and paste it into your own AI tool (ChatGPT, Claude, …).',
     },
     guidePhilo: {
       nl: '<strong>De kern:</strong> AI is het vertrekpunt, niet het eindpunt. Elk avontuur eindigt met een reflectievraag, zodat het kind zelf de regie houdt. Leg gerust uit dat een AI geen mens is, geen gevoelens heeft, en overtuigend kan klinken zónder gelijk te hebben.',

@@ -1,7 +1,7 @@
-# AI Explorer Academy
+# The Neuronauts
 
 Een speelse, veilige web-app (NL/EN) waarin kinderen van 9–12 jaar samen met een volwassene
-**Explorer Cards** doen: mini AI-avonturen. Kernidee: *AI is het vertrekpunt, niet het
+**avonturen (Explorer Cards)** doen: mini AI-avonturen. Kernidee: *AI is het vertrekpunt, niet het
 eindpunt — de mens houdt de regie.*
 
 A playful, safe web app (Dutch/English) where kids aged 9–12 do mini AI adventures together
@@ -16,7 +16,7 @@ in charge.*
 
 ## Wat zit erin? / What's inside
 
-- **54 Explorer Cards** in het Nederlands én Engels (taalknop 🇳🇱/🇬🇧 rechtsboven), waarvan
+- **54 avonturen (Explorer Cards)** in het Nederlands én Engels (taalknop 🇳🇱/🇬🇧 rechtsboven), waarvan
   10 offline "Buitenwereld"-avonturen.
 - **5 AI-superkrachten** met eigen mascotte-artwork: 🦊 Vonk (Ontdekken), 🐝 Zoem
   (Samenwerken), 🦉 Loep (Controleren), 🦫 Bikkel (Verbeteren), 🐧 Kompas (De baas over
@@ -61,4 +61,4 @@ manifest.json + sw.js → installeerbaar & offline (PWA)
 icon-*.png            → app-iconen
 ```
 
-Versie 2.0 · © Iris Fickeryounge · Gebouwd volgens PRD AI Explorer Academy v1
+Versie 2.0 · © Iris Fickeryounge · Gebouwd volgens PRD The Neuronauts v1

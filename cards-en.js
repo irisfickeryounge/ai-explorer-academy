@@ -1,5 +1,5 @@
 /*
- * AI Explorer Academy — cards-en.js (v3, 54 kaarten)
+ * The Neuronauts — cards-en.js (v3, 54 kaarten)
  * Kernfilosofie in elke kaart: AI is het vertrekpunt, niet het eindpunt — het kind beslist.
  * Nieuwe kaart toevoegen: object toevoegen met uniek id (en dezelfde id in cards-en.js).
  * Veld prompt_na_stap bepaalt waar de AI-prompt in de stappenlijst verschijnt (0 = ervoor).
