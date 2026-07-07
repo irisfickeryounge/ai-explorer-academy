@@ -423,3 +423,19 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 4px soli
   font-style: normal; font-weight: 800; color: var(--blue-ink); font-size: .9rem; display: block;
 }
 .s-testimonial cite small { display: block; font-weight: 600; color: var(--ink-soft); }
+
+/* ---------- Statistiekenband in hero ---------- */
+.s-stats {
+  max-width: 1120px; margin: 0 auto; position: relative;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+  padding: 0 clamp(16px, 4vw, 40px) 34px;
+}
+.s-stat {
+  text-align: center; padding: 14px 10px;
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px; backdrop-filter: blur(4px);
+}
+.s-stat strong { display: block; font-size: 1.7rem; font-weight: 900; color: var(--yellow); }
+.s-stat span { font-size: .85rem; color: rgba(255, 255, 255, 0.85); font-weight: 600; }
+@media (max-width: 620px) { .s-stats { grid-template-columns: repeat(2, 1fr); } }
