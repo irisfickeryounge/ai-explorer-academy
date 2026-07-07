@@ -439,3 +439,26 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 4px soli
 .s-stat strong { display: block; font-size: 1.7rem; font-weight: 900; color: var(--yellow); }
 .s-stat span { font-size: .85rem; color: rgba(255, 255, 255, 0.85); font-weight: 600; }
 @media (max-width: 620px) { .s-stats { grid-template-columns: repeat(2, 1fr); } }
+
+/* ---------- Zorgen erkennen → omslag ---------- */
+.s-zorgen-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;
+  margin-bottom: 28px;
+}
+.s-zorg {
+  background: var(--surface); border: 1px solid var(--line);
+  border-left: 6px solid #D14343; border-radius: 16px;
+  padding: 20px 22px; box-shadow: var(--shadow);
+}
+.s-zorg p { margin: 0 0 10px; color: var(--ink-soft); font-size: .96rem; }
+.s-zorg strong { color: var(--ink); }
+.s-zorg a { color: var(--blue); font-weight: 700; font-size: .85rem; text-decoration: none; }
+.s-omslag {
+  background: linear-gradient(135deg, #1E63E9, #0B3EA8);
+  border-radius: var(--radius); color: #fff;
+  padding: clamp(26px, 4vw, 40px); text-align: center;
+}
+.s-omslag h3 { color: var(--yellow); font-size: clamp(1.25rem, 2.6vw, 1.6rem); }
+.s-omslag p { color: rgba(255,255,255,.9); max-width: 720px; margin: 0 auto 22px; }
+.s-omslag strong { color: #fff; }
+.s-omslag .s-cta.ghost { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.4); }
